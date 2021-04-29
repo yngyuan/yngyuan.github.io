@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Yang Yuan&#39;s Blog</title>
+    <link>https://yngyuan.github.io/categories/</link>
+    <description>Recent content in Categories on Yang Yuan&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 08 Nov 2020 00:30:14 -0600</lastBuildDate>
+    
+	<atom:link href="https://yngyuan.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Product Management</title>
+      <link>https://yngyuan.github.io/categories/product-management/</link>
+      <pubDate>Sun, 08 Nov 2020 00:30:14 -0600</pubDate>
+      
+      <guid>https://yngyuan.github.io/categories/product-management/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>distributed system</title>
+      <link>https://yngyuan.github.io/categories/distributed-system/</link>
+      <pubDate>Fri, 24 Jul 2020 13:30:24 -0500</pubDate>
+      
+      <guid>https://yngyuan.github.io/categories/distributed-system/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>leetcode</title>
+      <link>https://yngyuan.github.io/categories/leetcode/</link>
+      <pubDate>Sun, 19 Jul 2020 20:35:45 -0500</pubDate>
+      
+      <guid>https://yngyuan.github.io/categories/leetcode/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Microservice</title>
+      <link>https://yngyuan.github.io/categories/microservice/</link>
+      <pubDate>Sat, 18 Jul 2020 22:09:50 -0500</pubDate>
+      
+      <guid>https://yngyuan.github.io/categories/microservice/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>algorithms</title>
+      <link>https://yngyuan.github.io/categories/algorithms/</link>
+      <pubDate>Mon, 13 Jul 2020 17:20:39 -0500</pubDate>
+      
+      <guid>https://yngyuan.github.io/categories/algorithms/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Productivity</title>
+      <link>https://yngyuan.github.io/categories/productivity/</link>
+      <pubDate>Sat, 09 May 2020 10:14:19 -0500</pubDate>
+      
+      <guid>https://yngyuan.github.io/categories/productivity/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

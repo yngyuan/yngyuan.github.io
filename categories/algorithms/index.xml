@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>algorithms on Yang Yuan&#39;s Blog</title>
+    <link>https://yngyuan.github.io/categories/algorithms/</link>
+    <description>Recent content in algorithms on Yang Yuan&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 13 Jul 2020 17:20:39 -0500</lastBuildDate>
+    
+	<atom:link href="https://yngyuan.github.io/categories/algorithms/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Best Time to Buy and Sell Stock</title>
+      <link>https://yngyuan.github.io/post/best-time-to-buy-and-sell-stock/</link>
+      <pubDate>Mon, 13 Jul 2020 17:20:39 -0500</pubDate>
+      
+      <guid>https://yngyuan.github.io/post/best-time-to-buy-and-sell-stock/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Just a Little Bit</title>
+      <link>https://yngyuan.github.io/post/just-a-little-bit/</link>
+      <pubDate>Wed, 01 Jul 2020 23:19:55 -0500</pubDate>
+      
+      <guid>https://yngyuan.github.io/post/just-a-little-bit/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sorting Things Out</title>
+      <link>https://yngyuan.github.io/post/sorting-things-out/</link>
+      <pubDate>Wed, 10 Jun 2020 09:59:54 -0500</pubDate>
+      
+      <guid>https://yngyuan.github.io/post/sorting-things-out/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Two Sum and Some More</title>
+      <link>https://yngyuan.github.io/post/two-sum-and-some-more/</link>
+      <pubDate>Wed, 03 Jun 2020 10:38:01 -0500</pubDate>
+      
+      <guid>https://yngyuan.github.io/post/two-sum-and-some-more/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

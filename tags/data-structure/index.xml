@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>data structure on Yang Yuan&#39;s Blog</title>
+    <link>https://yngyuan.github.io/tags/data-structure/</link>
+    <description>Recent content in data structure on Yang Yuan&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 03 Jun 2020 10:38:01 -0500</lastBuildDate>
+    
+	<atom:link href="https://yngyuan.github.io/tags/data-structure/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Two Sum and Some More</title>
+      <link>https://yngyuan.github.io/post/two-sum-and-some-more/</link>
+      <pubDate>Wed, 03 Jun 2020 10:38:01 -0500</pubDate>
+      
+      <guid>https://yngyuan.github.io/post/two-sum-and-some-more/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

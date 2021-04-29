@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>dynamic programming on Yang Yuan&#39;s Blog</title>
+    <link>https://yngyuan.github.io/tags/dynamic-programming/</link>
+    <description>Recent content in dynamic programming on Yang Yuan&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 19 Jul 2020 20:35:45 -0500</lastBuildDate>
+    
+	<atom:link href="https://yngyuan.github.io/tags/dynamic-programming/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>House Robbers</title>
+      <link>https://yngyuan.github.io/post/house-robbers/</link>
+      <pubDate>Sun, 19 Jul 2020 20:35:45 -0500</pubDate>
+      
+      <guid>https://yngyuan.github.io/post/house-robbers/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Best Time to Buy and Sell Stock</title>
+      <link>https://yngyuan.github.io/post/best-time-to-buy-and-sell-stock/</link>
+      <pubDate>Mon, 13 Jul 2020 17:20:39 -0500</pubDate>
+      
+      <guid>https://yngyuan.github.io/post/best-time-to-buy-and-sell-stock/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>user story on Yang Yuan&#39;s Blog</title>
+    <link>https://yngyuan.github.io/tags/user-story/</link>
+    <description>Recent content in user story on Yang Yuan&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 08 Nov 2020 00:30:14 -0600</lastBuildDate>
+    
+	<atom:link href="https://yngyuan.github.io/tags/user-story/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>User Stories Applied Notes Part 1</title>
+      <link>https://yngyuan.github.io/post/user-stories-applied-notes-part-1/</link>
+      <pubDate>Sun, 08 Nov 2020 00:30:14 -0600</pubDate>
+      
+      <guid>https://yngyuan.github.io/post/user-stories-applied-notes-part-1/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

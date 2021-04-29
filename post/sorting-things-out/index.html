@@ -1,0 +1,1598 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Sorting Things Out - Yang Yuan&#39;s Blog</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="Yang Yuan" />
+  <meta name="description" content="" />
+
+  <meta name="keywords" content="Blog, Tech, Yang Yuan" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.69.2" />
+
+
+<link rel="canonical" href="https://yngyuan.github.io/post/sorting-things-out/" />
+
+
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/sass/jane.min.bee9bdab7dd02331313dc4658c51f2cb3e3523c6c05a709dfbf474ab5bfad25c.css" integrity="sha256-vum9q33QIzExPcRljFHyyz41I8bAWnCd&#43;/R0q1v60lw=" media="screen" crossorigin="anonymous">
+
+
+
+
+
+<meta property="og:title" content="Sorting Things Out" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yngyuan.github.io/post/sorting-things-out/" />
+<meta property="article:published_time" content="2020-06-10T09:59:54-05:00" />
+<meta property="article:modified_time" content="2020-06-10T09:59:54-05:00" />
+<meta itemprop="name" content="Sorting Things Out">
+<meta itemprop="description" content="">
+<meta itemprop="datePublished" content="2020-06-10T09:59:54-05:00" />
+<meta itemprop="dateModified" content="2020-06-10T09:59:54-05:00" />
+<meta itemprop="wordCount" content="2892">
+
+
+
+<meta itemprop="keywords" content="leetcode,sorting," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Sorting Things Out"/>
+<meta name="twitter:description" content=""/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">YY</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yngyuan.github.io/">Blogs</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yngyuan.github.io/post/">Archives</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yngyuan.github.io/tags/">Tags</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yngyuan.github.io/categories/">Categories</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yngyuan.github.io/about/">About</a>
+          
+        
+      </li>
+    
+
+    
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      YY
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yngyuan.github.io/">Blogs</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yngyuan.github.io/post/">Archives</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yngyuan.github.io/tags/">Tags</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yngyuan.github.io/categories/">Categories</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yngyuan.github.io/about/">About</a>
+          
+
+        
+
+      </li>
+    
+
+    
+    
+
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">Sorting Things Out</h1>
+      
+      <div class="post-meta">
+        <time datetime="2020-06-10" class="post-time">
+          2020-06-10
+        </time>
+        <div class="post-category">
+            <a href="https://yngyuan.github.io/categories/algorithms/"> algorithms </a>
+            
+          </div>
+        
+
+        
+        
+
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Table of Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#selection-sort">Selection Sort</a></li>
+    <li><a href="#insertion-sort">Insertion Sort</a></li>
+    <li><a href="#shellsort">Shellsort</a></li>
+    <li><a href="#shuffling">Shuffling</a></li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#top-down-mergesort">Top-down mergesort</a></li>
+        <li><a href="#bottom-up-mergesort">Bottom-up mergesort</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#heap">Heap</a></li>
+        <li><a href="#heap-sort">Heap Sort</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <p>In a ever-changing world, things could get pretty messy pretty fast. So it is important for us to be able to sort things out. Now let&rsquo;t take a look of the various sorting algorithms. There are too many of them, so here we discuss the most iconic ones.</p>
+<h1 id="elementary-sorts">Elementary Sorts</h1>
+<p>With but a few exceptions, our sort code refers to the data only through two opera-tions: the method less() that compares items and the method exch() that exchanges them.  Here is a template for sort class.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Example</span><span class="o">{</span>
+  
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">sort</span><span class="o">(</span><span class="n">Comparable</span><span class="o">[]</span> <span class="n">a</span><span class="o">)</span>
+<span class="o">{</span> <span class="cm">/* See Algorithms 2.1, 2.2, 2.3, 2.4, 2.5, or 2.7. */</span> <span class="o">}</span>
+  
+	<span class="kd">private</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">less</span><span class="o">(</span><span class="n">Comparable</span> <span class="n">v</span><span class="o">,</span> <span class="n">Comparable</span> <span class="n">w</span><span class="o">)</span> <span class="o">{</span> 
+    <span class="k">return</span> <span class="n">v</span><span class="o">.</span><span class="na">compareTo</span><span class="o">(</span><span class="n">w</span><span class="o">)</span> <span class="o">&lt;</span> <span class="n">0</span><span class="o">;</span> 
+  <span class="o">}</span>
+	
+  <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">exch</span><span class="o">(</span><span class="n">Comparable</span><span class="o">[]</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">i</span><span class="o">,</span> <span class="kt">int</span> <span class="n">j</span><span class="o">){</span>  
+    <span class="n">Comparable</span> <span class="n">t</span> <span class="o">=</span> <span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">];</span> <span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">a</span><span class="o">[</span><span class="n">j</span><span class="o">];</span> <span class="n">a</span><span class="o">[</span><span class="n">j</span><span class="o">]</span> <span class="o">=</span> <span class="n">t</span><span class="o">;</span>  
+  <span class="o">}</span>
+  
+	<span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">show</span><span class="o">(</span><span class="n">Comparable</span><span class="o">[]</span> <span class="n">a</span><span class="o">)</span> <span class="o">{</span> 
+    <span class="c1">// Print the array, on a single line. for (int i = 0; i &lt; a.length; i++)
+</span><span class="c1"></span>			<span class="n">StdOut</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">+</span> <span class="s">&#34; &#34;</span><span class="o">);</span> <span class="n">StdOut</span><span class="o">.</span><span class="na">println</span><span class="o">();</span>
+  <span class="o">}</span>
+  
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">isSorted</span><span class="o">(</span><span class="n">Comparable</span><span class="o">[]</span> <span class="n">a</span><span class="o">)</span>
+		<span class="o">{</span> <span class="c1">// Test whether the array entries are in order.
+</span><span class="c1"></span>				<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">a</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span>
+					<span class="k">if</span> <span class="o">(</span><span class="n">less</span><span class="o">(</span><span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">],</span> <span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">-</span><span class="n">1</span><span class="o">]))</span> <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+     <span class="o">}</span>
+		
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span>
+			<span class="o">{</span> <span class="c1">// Read strings from standard input, sort them, and print.
+</span><span class="c1"></span>					<span class="n">String</span><span class="o">[]</span> <span class="n">a</span> <span class="o">=</span> <span class="n">In</span><span class="o">.</span><span class="na">readStrings</span><span class="o">();</span> <span class="n">sort</span><span class="o">(</span><span class="n">a</span><span class="o">);</span>
+					<span class="k">assert</span> <span class="n">isSorted</span><span class="o">(</span><span class="n">a</span><span class="o">);</span>
+					<span class="n">show</span><span class="o">(</span><span class="n">a</span><span class="o">);</span>
+      <span class="o">}</span> 
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Take the simple task of sort an array for example.</p>
+<p><strong>Example Quetion</strong></p>
+<p>Given an array of integers <code>nums</code>, sort the array in ascending order.</p>
+<p><strong>Example 1:</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">Input: nums = [5,2,3,1]
+Output: [1,2,3,5]
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>Example 2:</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">Input: nums = [5,1,1,2,0,0]
+Output: [0,0,1,1,2,5]
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 50000</code></li>
+<li><code>-50000 &lt;= nums[i] &lt;= 50000</code></li>
+</ul>
+<h2 id="selection-sort">Selection Sort</h2>
+<p>First, find the smallest item in the array and exchange it with the first entry (itself if the first entry is already the smallest). Then, find the next smallest item and exchange it with the sec- ond entry. Continue in this way until the entire array is sorted.</p>
+<ul>
+<li>Running time is insensitive to input.</li>
+<li>Data movement is minimal.</li>
+<li>O(N^2)</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">sortArray</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">nums</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">len</span> <span class="o">=</span> <span class="n">nums</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">len</span><span class="o">&lt;=</span><span class="n">1</span><span class="o">)</span> <span class="k">return</span> <span class="n">nums</span><span class="o">;</span>
+        <span class="kt">int</span><span class="o">[]</span> <span class="n">res</span> <span class="o">=</span> <span class="n">selectionSort</span><span class="o">(</span><span class="n">nums</span><span class="o">);</span>
+        <span class="k">return</span> <span class="n">res</span><span class="o">;</span>
+    <span class="o">}</span> 
+    
+  <span class="c1">// exch() and less() as defined earlier
+</span><span class="c1"></span>    <span class="kd">private</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">selectionSort</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">nums</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">nums</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++){</span>
+            <span class="kt">int</span> <span class="n">min</span> <span class="o">=</span> <span class="n">i</span><span class="o">;</span>
+            <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="n">1</span><span class="o">;</span> <span class="n">j</span><span class="o">&lt;</span><span class="n">nums</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">j</span><span class="o">++){</span>
+                <span class="k">if</span><span class="o">(</span><span class="n">less</span><span class="o">(</span><span class="n">nums</span><span class="o">[</span><span class="n">j</span><span class="o">],</span> <span class="n">nums</span><span class="o">[</span><span class="n">min</span><span class="o">])){</span>
+                    <span class="n">min</span> <span class="o">=</span> <span class="n">j</span><span class="o">;</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+            <span class="n">exch</span><span class="o">(</span><span class="n">nums</span><span class="o">,</span> <span class="n">i</span><span class="o">,</span> <span class="n">min</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">nums</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="insertion-sort">Insertion Sort</h2>
+<p>For each i from 0 to N-1, exchange a[i] with the entries that are smaller in a[0] through a[i-1]. As the index i travels from left to right, the entries to its left are in sorted order in the array, so the array is fully sorted when i reaches the right end.</p>
+<ul>
+<li>Unlike that of selection sort, the running time of insertion sort depends on the ini- tial order of the items in the input.</li>
+<li>excellent for partially sorted arrays.</li>
+<li>O(N^2)</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">sortArray</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">nums</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">len</span> <span class="o">=</span> <span class="n">nums</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">len</span><span class="o">&lt;=</span><span class="n">1</span><span class="o">)</span> <span class="k">return</span> <span class="n">nums</span><span class="o">;</span>
+        <span class="kt">int</span><span class="o">[]</span> <span class="n">res</span> <span class="o">=</span> <span class="n">insertionSort</span><span class="o">(</span><span class="n">nums</span><span class="o">);</span>
+        <span class="k">return</span> <span class="n">res</span><span class="o">;</span>
+    <span class="o">}</span>
+    
+    <span class="kd">private</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">insertionSort</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">nums</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">nums</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++){</span>
+            <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="n">i</span><span class="o">;</span> <span class="n">j</span><span class="o">&gt;</span><span class="n">0</span><span class="o">;</span> <span class="n">j</span><span class="o">--){</span>
+                <span class="k">if</span><span class="o">(</span><span class="n">less</span><span class="o">(</span><span class="n">nums</span><span class="o">[</span><span class="n">j</span><span class="o">],</span> <span class="n">nums</span><span class="o">[</span><span class="n">j</span><span class="o">-</span><span class="n">1</span><span class="o">])){</span>
+										<span class="n">exch</span><span class="o">(</span><span class="n">nums</span><span class="o">,</span> <span class="n">j</span><span class="o">,</span> <span class="n">j</span><span class="o">-</span><span class="n">1</span><span class="o">);</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">nums</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="shellsort">Shellsort</h2>
+<p>Shellsort is based on insertion sort. It gains speed by allowing exchanges of array entries that are far apart, to produce partially sorted arrays that can be efficiently sorted, eventually by insertion sort.</p>
+<p>One way to implement shellsort would be, for each <em>h</em>, to use insertion sort independently on each of the <em>h</em> subsequences. Because the subsequences are independent, we can use an even simpler approach: when <em>h</em>-sorting the array, we insert each item among the previous items in its <em>h</em>-subsequence by exchanging it with those that have larger keys (moving them each one position to the right in the subsequence).</p>
+<ul>
+<li>much faster than insertion sort and selection sort.</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">sortArray</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">nums</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">len</span> <span class="o">=</span> <span class="n">nums</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">len</span><span class="o">&lt;=</span><span class="n">1</span><span class="o">)</span> <span class="k">return</span> <span class="n">nums</span><span class="o">;</span>
+        <span class="kt">int</span><span class="o">[]</span> <span class="n">res</span> <span class="o">=</span> <span class="n">shellSort</span><span class="o">(</span><span class="n">nums</span><span class="o">);</span>
+        <span class="k">return</span> <span class="n">res</span><span class="o">;</span>
+    <span class="o">}</span>
+    
+    <span class="kd">private</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">shellSort</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">nums</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">N</span> <span class="o">=</span> <span class="n">nums</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
+        <span class="kt">int</span> <span class="n">h</span> <span class="o">=</span> <span class="n">1</span><span class="o">;</span>
+        <span class="k">while</span><span class="o">(</span><span class="n">h</span><span class="o">&lt;</span><span class="n">N</span><span class="o">/</span><span class="n">3</span><span class="o">)</span> <span class="n">h</span> <span class="o">=</span> <span class="n">3</span><span class="o">*</span><span class="n">h</span> <span class="o">+</span> <span class="n">1</span><span class="o">;</span>
+        
+        <span class="k">while</span><span class="o">(</span><span class="n">h</span><span class="o">&gt;=</span><span class="n">1</span><span class="o">){</span>
+            <span class="c1">// h-sort the array
+</span><span class="c1"></span>            <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">h</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">N</span><span class="o">;</span> <span class="n">i</span><span class="o">++){</span>
+                <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="n">i</span><span class="o">;</span> <span class="n">j</span><span class="o">&gt;=</span><span class="n">h</span> <span class="o">&amp;&amp;</span> <span class="n">less</span><span class="o">(</span><span class="n">nums</span><span class="o">[</span><span class="n">j</span><span class="o">],</span> <span class="n">nums</span><span class="o">[</span><span class="n">j</span><span class="o">-</span><span class="n">h</span><span class="o">]);</span> <span class="n">j</span><span class="o">-=</span><span class="n">h</span><span class="o">){</span>
+										<span class="n">exch</span><span class="o">(</span><span class="n">nums</span><span class="o">,</span> <span class="n">j</span><span class="o">,</span> <span class="n">j</span><span class="o">-</span><span class="n">h</span><span class="o">);</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+            <span class="n">h</span><span class="o">/=</span><span class="n">3</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">nums</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="shuffling">Shuffling</h2>
+<p><strong>Shuffle Sort</strong></p>
+<ul>
+<li>Generate a random real number for each array entry.</li>
+<li>Sort the array.</li>
+<li>Shuffle sort produces a uniformly random permutation of the input array, provided no duplicate values.</li>
+<li>Need to pay cost of sort.</li>
+</ul>
+<p><strong>Knuth Shuffle</strong></p>
+<ul>
+<li>In iteration i, pick integer r between 0 and i uniformly at random.</li>
+<li>Swap a[i] and a[r].</li>
+<li>Produces a uniformly random permutation of the input array in linear time.</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">shuffle</span><span class="o">(</span><span class="n">Object</span><span class="o">[]</span> <span class="n">a</span><span class="o">){</span>
+		<span class="kt">int</span> <span class="n">N</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
+		<span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">N</span><span class="o">;</span> <span class="n">i</span><span class="o">++){</span>
+			<span class="kt">int</span> <span class="n">r</span> <span class="o">=</span> <span class="n">StdRandom</span><span class="o">.</span><span class="na">uniform</span><span class="o">(</span><span class="n">i</span><span class="o">+</span><span class="n">1</span><span class="o">);</span>
+			<span class="n">exch</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">i</span><span class="o">,</span> <span class="n">r</span><span class="o">);</span>
+		<span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">private</span> <span class="kt">void</span> <span class="nf">shuffle</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">array</span><span class="o">){</span>
+        <span class="n">Random</span> <span class="n">rand</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Random</span><span class="o">();</span>
+		
+		<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">array</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+			<span class="kt">int</span> <span class="n">randomIndexToSwap</span> <span class="o">=</span> <span class="n">rand</span><span class="o">.</span><span class="na">nextInt</span><span class="o">(</span><span class="n">array</span><span class="o">.</span><span class="na">length</span><span class="o">);</span>
+			<span class="kt">int</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">array</span><span class="o">[</span><span class="n">randomIndexToSwap</span><span class="o">];</span>
+			<span class="n">array</span><span class="o">[</span><span class="n">randomIndexToSwap</span><span class="o">]</span> <span class="o">=</span> <span class="n">array</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
+			<span class="n">array</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">temp</span><span class="o">;</span>
+		<span class="o">}</span>
+ <span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="mergesort">Mergesort</h1>
+<p>The algorithms that we consider in this section are based on a simple operation known as <em>merging</em>: combining two ordered arrays to make one larger ordered array. This operation immediately leads to a simple recursive sort method known as <em>mergesort</em>: to sort an array, divide it into two halves, sort the two halves (recursively), and then merge the results.</p>
+<ul>
+<li>Java sort for objects</li>
+<li>Divide and Conquer</li>
+<li>O(Nlog(N))</li>
+<li>Not optimal with respect to space usage</li>
+</ul>
+<h3 id="top-down-mergesort">Top-down mergesort</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java">  <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Merge</span>
+  <span class="o">{</span>
+     <span class="kd">private</span> <span class="kd">static</span> <span class="n">Comparable</span><span class="o">[]</span> <span class="n">aux</span><span class="o">;</span>      <span class="c1">// auxiliary array for merges
+</span><span class="c1"></span>     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">sort</span><span class="o">(</span><span class="n">Comparable</span><span class="o">[]</span> <span class="n">a</span><span class="o">)</span>
+     <span class="o">{</span>
+				<span class="n">aux</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Comparable</span><span class="o">[</span><span class="n">a</span><span class="o">.</span><span class="na">length</span><span class="o">];</span> <span class="c1">// Allocate space just once.
+</span><span class="c1"></span>				<span class="n">sort</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">0</span><span class="o">,</span> <span class="n">a</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span> <span class="n">1</span><span class="o">);</span> <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">sort</span><span class="o">(</span><span class="n">Comparable</span><span class="o">[]</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">lo</span><span class="o">,</span> <span class="kt">int</span> <span class="n">hi</span><span class="o">)</span> 
+    <span class="o">{</span> <span class="c1">// Sort a[lo..hi].
+</span><span class="c1"></span>				<span class="k">if</span> <span class="o">(</span><span class="n">hi</span> <span class="o">&lt;=</span> <span class="n">lo</span><span class="o">)</span> <span class="k">return</span><span class="o">;</span>
+				<span class="kt">int</span> <span class="n">mid</span> <span class="o">=</span> <span class="n">lo</span> <span class="o">+</span> <span class="o">(</span><span class="n">hi</span> <span class="o">-</span> <span class="n">lo</span><span class="o">)/</span><span class="n">2</span><span class="o">;</span>
+				<span class="n">sort</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">lo</span><span class="o">,</span> <span class="n">mid</span><span class="o">);</span> <span class="c1">// Sort left half.
+</span><span class="c1"></span>				<span class="n">sort</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">mid</span><span class="o">+</span><span class="n">1</span><span class="o">,</span> <span class="n">hi</span><span class="o">);</span> <span class="c1">// Sort right half.
+</span><span class="c1"></span>				<span class="n">merge</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">lo</span><span class="o">,</span> <span class="n">mid</span><span class="o">,</span> <span class="n">hi</span><span class="o">);</span> <span class="c1">// Merge results.
+</span><span class="c1"></span>		<span class="o">}</span>
+    
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">merge</span><span class="o">(</span><span class="n">Comparable</span><span class="o">[]</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">lo</span><span class="o">,</span> <span class="kt">int</span> <span class="n">mid</span><span class="o">,</span> <span class="kt">int</span> <span class="n">hi</span><span class="o">)</span> <span class="o">{</span> 
+      <span class="c1">// Merge a[lo..mid] with a[mid+1..hi].
+</span><span class="c1"></span>     <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">lo</span><span class="o">,</span> <span class="n">j</span> <span class="o">=</span> <span class="n">mid</span><span class="o">+</span><span class="n">1</span><span class="o">;</span>
+			<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="n">lo</span><span class="o">;</span> <span class="n">k</span> <span class="o">&lt;=</span> <span class="n">hi</span><span class="o">;</span> <span class="n">k</span><span class="o">++)</span> <span class="c1">// Copy a[lo..hi] to aux[lo..hi]. 
+</span><span class="c1"></span>        <span class="n">aux</span><span class="o">[</span><span class="n">k</span><span class="o">]</span> <span class="o">=</span> <span class="n">a</span><span class="o">[</span><span class="n">k</span><span class="o">];</span>
+			<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="n">lo</span><span class="o">;</span> <span class="n">k</span> <span class="o">&lt;=</span> <span class="n">hi</span><span class="o">;</span> <span class="n">k</span><span class="o">++)</span> <span class="c1">// Merge back to a[lo..hi]. 
+</span><span class="c1"></span>        <span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">&gt;</span> <span class="n">mid</span><span class="o">)</span> <span class="n">a</span><span class="o">[</span><span class="n">k</span><span class="o">]</span> <span class="o">=</span> <span class="n">aux</span><span class="o">[</span><span class="n">j</span><span class="o">++];</span>
+				<span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">j</span> <span class="o">&gt;</span> <span class="n">hi</span> <span class="o">)</span> <span class="n">a</span><span class="o">[</span><span class="n">k</span><span class="o">]</span> <span class="o">=</span> <span class="n">aux</span><span class="o">[</span><span class="n">i</span><span class="o">++];</span>
+				<span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">less</span><span class="o">(</span><span class="n">aux</span><span class="o">[</span><span class="n">j</span><span class="o">],</span> <span class="n">aux</span><span class="o">[</span><span class="n">i</span><span class="o">]))</span> <span class="n">a</span><span class="o">[</span><span class="n">k</span><span class="o">]</span> <span class="o">=</span> <span class="n">aux</span><span class="o">[</span><span class="n">j</span><span class="o">++];</span>
+        <span class="k">else</span>                           <span class="n">a</span><span class="o">[</span><span class="n">k</span><span class="o">]</span> <span class="o">=</span> <span class="n">aux</span><span class="o">[</span><span class="n">i</span><span class="o">++];</span>
+		<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Speed up
+<ul>
+<li>Use insertion sort for small subarrays. Switching to insertion sort for small subarrays (length 15 or less, say) will improve the running time of a typical mergesort implementation by 10 to 15 percent.</li>
+<li>Test Whether the array is already in order.  Skip the call to merge() if a[mid] is less than or equal to a[mid+1].</li>
+<li>Eliminate the copy to the auxiliary array. To do so, we use two invocations of the sort method: one takes its input from the given array and puts the sorted output in the auxiliary array; the other takes its input from the auxiliary array and puts the sorted output in the given array.</li>
+</ul>
+</li>
+</ul>
+<h3 id="bottom-up-mergesort">Bottom-up mergesort</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MergeBU</span><span class="o">{</span>
+  		<span class="kd">private</span> <span class="kd">static</span> <span class="n">Comparable</span><span class="o">[]</span> <span class="n">aux</span><span class="o">;</span>      <span class="c1">// auxiliary array for merges
+</span><span class="c1"></span>
+			<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">sort</span><span class="o">(</span><span class="n">Comparable</span><span class="o">[]</span> <span class="n">a</span><span class="o">)</span> 
+      <span class="o">{</span> <span class="c1">// Do lg N passes of pairwise merges.
+</span><span class="c1"></span>				<span class="kt">int</span> <span class="n">N</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
+				<span class="n">aux</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Comparable</span><span class="o">[</span><span class="n">N</span><span class="o">];</span>
+				<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">sz</span> <span class="o">=</span> <span class="n">1</span><span class="o">;</span> <span class="n">sz</span> <span class="o">&lt;</span> <span class="n">N</span><span class="o">;</span> <span class="n">sz</span> <span class="o">=</span> <span class="n">sz</span><span class="o">+</span><span class="n">sz</span><span class="o">)</span> <span class="c1">// sz: subarray size 
+</span><span class="c1"></span>        	<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">lo</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">lo</span> <span class="o">&lt;</span> <span class="n">N</span><span class="o">-</span><span class="n">sz</span><span class="o">;</span> <span class="n">lo</span> <span class="o">+=</span> <span class="n">sz</span><span class="o">+</span><span class="n">sz</span><span class="o">)</span> <span class="c1">// lo: subarray index
+</span><span class="c1"></span>						<span class="n">merge</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">lo</span><span class="o">,</span> <span class="n">lo</span><span class="o">+</span><span class="n">sz</span><span class="o">-</span><span class="n">1</span><span class="o">,</span> <span class="n">Math</span><span class="o">.</span><span class="na">min</span><span class="o">(</span><span class="n">lo</span><span class="o">+</span><span class="n">sz</span><span class="o">+</span><span class="n">sz</span><span class="o">-</span><span class="n">1</span><span class="o">,</span> <span class="n">N</span><span class="o">-</span><span class="n">1</span><span class="o">));</span>
+			<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="quicksort">Quicksort</h1>
+<p>It works by <em>partitioning</em> an array into two subarrays, then sorting the subarrays indepen- dently. Quicksort is complementary to mergesort: for mergesort, we break the array into two subarrays to be sorted and then combine the ordered subarrays to make the whole ordered array; for quicksort, we rearrange the array such that, when the two subarrays are sorted, the whole array is ordered.</p>
+<ul>
+<li>
+<p>Java sort for primitive types</p>
+</li>
+<li>
+<p>In-place</p>
+</li>
+<li>
+<p>O(N(log(N)))</p>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java">  <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Quick</span>
+  <span class="o">{</span>
+     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">sort</span><span class="o">(</span><span class="n">Comparable</span><span class="o">[]</span> <span class="n">a</span><span class="o">)</span>
+     <span class="o">{</span>
+				<span class="n">StdRandom</span><span class="o">.</span><span class="na">shuffle</span><span class="o">(</span><span class="n">a</span><span class="o">);</span> <span class="c1">// Eliminate dependence on input.
+</span><span class="c1"></span>				<span class="n">sort</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">0</span><span class="o">,</span> <span class="n">a</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span> <span class="n">1</span><span class="o">);</span> 
+     <span class="o">}</span>
+    
+     <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">sort</span><span class="o">(</span><span class="n">Comparable</span><span class="o">[]</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">lo</span><span class="o">,</span> <span class="kt">int</span> <span class="n">hi</span><span class="o">)</span>
+     <span class="o">{</span>
+				<span class="k">if</span> <span class="o">(</span><span class="n">hi</span> <span class="o">&lt;=</span> <span class="n">lo</span><span class="o">)</span> <span class="k">return</span><span class="o">;</span>
+				<span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">partition</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">lo</span><span class="o">,</span> <span class="n">hi</span><span class="o">);</span> <span class="c1">// Partition (see page 291). 
+</span><span class="c1"></span>       	<span class="n">sort</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">lo</span><span class="o">,</span> <span class="n">j</span><span class="o">-</span><span class="n">1</span><span class="o">);</span> <span class="c1">// Sort left part a[lo .. j-1]. 
+</span><span class="c1"></span>       	<span class="n">sort</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">j</span><span class="o">+</span><span class="n">1</span><span class="o">,</span> <span class="n">hi</span><span class="o">);</span> <span class="c1">// Sort right part a[j+1 .. hi].
+</span><span class="c1"></span>	<span class="o">}</span> 
+    
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">partition</span><span class="o">(</span><span class="n">Comparable</span><span class="o">[]</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">lo</span><span class="o">,</span> <span class="kt">int</span> <span class="n">hi</span><span class="o">)</span> 
+    <span class="o">{</span> <span class="c1">// Partition into a[lo..i-1], a[i], a[i+1..hi].
+</span><span class="c1"></span>				<span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">lo</span><span class="o">,</span> <span class="n">j</span> <span class="o">=</span> <span class="n">hi</span><span class="o">+</span><span class="n">1</span><span class="o">;</span> <span class="c1">// left and right scan indices 
+</span><span class="c1"></span>      	<span class="n">Comparable</span> <span class="n">v</span> <span class="o">=</span> <span class="n">a</span><span class="o">[</span><span class="n">lo</span><span class="o">];</span> <span class="c1">// partitioning item
+</span><span class="c1"></span>				<span class="k">while</span> <span class="o">(</span><span class="kc">true</span><span class="o">)</span>
+				<span class="o">{</span> <span class="c1">// Scan right, scan left, check for scan complete, and exchange.
+</span><span class="c1"></span>						<span class="k">while</span> <span class="o">(</span><span class="n">less</span><span class="o">(</span><span class="n">a</span><span class="o">[++</span><span class="n">i</span><span class="o">],</span> <span class="n">v</span><span class="o">))</span> <span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">==</span> <span class="n">hi</span><span class="o">)</span> <span class="k">break</span><span class="o">;</span> 
+          	<span class="k">while</span> <span class="o">(</span><span class="n">less</span><span class="o">(</span><span class="n">v</span><span class="o">,</span> <span class="n">a</span><span class="o">[--</span><span class="n">j</span><span class="o">]))</span> <span class="k">if</span> <span class="o">(</span><span class="n">j</span> <span class="o">==</span> <span class="n">lo</span><span class="o">)</span> <span class="k">break</span><span class="o">;</span> 
+          	<span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">&gt;=</span> <span class="n">j</span><span class="o">)</span> <span class="k">break</span><span class="o">;</span>
+						<span class="n">exch</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">i</span><span class="o">,</span> <span class="n">j</span><span class="o">);</span>
+ 				<span class="o">}</span>
+				<span class="n">exch</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">lo</span><span class="o">,</span> <span class="n">j</span><span class="o">);</span> <span class="c1">// Put v = a[j] into position
+</span><span class="c1"></span>				<span class="k">return</span> <span class="n">j</span><span class="o">;</span> <span class="c1">// // with a[lo..j-1] &lt;= a[j] &lt;= a[j+1..hi].
+</span><span class="c1"></span>   <span class="o">}</span>
+<span class="o">}</span>
+
+
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="usage---selection">Usage - Selection</h4>
+<p>Selection problems can also be solved with the quick sort approach.</p>
+<p>Find the <strong>k</strong>th largest element in an unsorted array. Note that it is the kth largest element in the sorted order, not the kth distinct element.</p>
+<p><strong>Example 1:</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">Input: [3,2,1,5,6,4] and k = 2
+Output: 5
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>Example 2:</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">Input: [3,2,3,1,2,4,5,5,6] and k = 4
+Output: 4
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>QuickSelect</strong></p>
+<ul>
+<li>Choose a random pivot.</li>
+<li>Use a partition algorithm to place the pivot into its perfect position <code>pos</code> in the sorted array, move smaller elements to the left of pivot, and larger or equal ones - to the right.</li>
+<li>Compare <code>pos</code> and <code>N - k</code> to choose the side of array to proceed recursively.</li>
+<li>Here there is no need to deal with both parts since now one knows in which part to search for <code>N - k</code>th smallest element, and that reduces average time complexity to O(N)</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">java.util.Random</span><span class="o">;</span>
+<span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+  <span class="kt">int</span> <span class="o">[]</span> <span class="n">nums</span><span class="o">;</span>
+
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">swap</span><span class="o">(</span><span class="kt">int</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">b</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kt">int</span> <span class="n">tmp</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">nums</span><span class="o">[</span><span class="n">a</span><span class="o">];</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">nums</span><span class="o">[</span><span class="n">a</span><span class="o">]</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">nums</span><span class="o">[</span><span class="n">b</span><span class="o">];</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">nums</span><span class="o">[</span><span class="n">b</span><span class="o">]</span> <span class="o">=</span> <span class="n">tmp</span><span class="o">;</span>
+  <span class="o">}</span>
+
+
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">partition</span><span class="o">(</span><span class="kt">int</span> <span class="n">left</span><span class="o">,</span> <span class="kt">int</span> <span class="n">right</span><span class="o">,</span> <span class="kt">int</span> <span class="n">pivot_index</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kt">int</span> <span class="n">pivot</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">nums</span><span class="o">[</span><span class="n">pivot_index</span><span class="o">];</span>
+    <span class="c1">// 1. move pivot to end
+</span><span class="c1"></span>    <span class="n">swap</span><span class="o">(</span><span class="n">pivot_index</span><span class="o">,</span> <span class="n">right</span><span class="o">);</span>
+    <span class="kt">int</span> <span class="n">store_index</span> <span class="o">=</span> <span class="n">left</span><span class="o">;</span>
+
+    <span class="c1">// 2. move all smaller elements to the left
+</span><span class="c1"></span>    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">left</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">right</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+      <span class="k">if</span> <span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">nums</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">&lt;</span> <span class="n">pivot</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">swap</span><span class="o">(</span><span class="n">store_index</span><span class="o">,</span> <span class="n">i</span><span class="o">);</span>
+        <span class="n">store_index</span><span class="o">++;</span>
+      <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="c1">// 3. move pivot to its final place
+</span><span class="c1"></span>    <span class="n">swap</span><span class="o">(</span><span class="n">store_index</span><span class="o">,</span> <span class="n">right</span><span class="o">);</span>
+
+    <span class="k">return</span> <span class="n">store_index</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">quickselect</span><span class="o">(</span><span class="kt">int</span> <span class="n">left</span><span class="o">,</span> <span class="kt">int</span> <span class="n">right</span><span class="o">,</span> <span class="kt">int</span> <span class="n">k_smallest</span><span class="o">)</span> <span class="o">{</span>
+    <span class="cm">/*
+</span><span class="cm">    Returns the k-th smallest element of list within left..right.
+</span><span class="cm">    */</span>
+
+    <span class="k">if</span> <span class="o">(</span><span class="n">left</span> <span class="o">==</span> <span class="n">right</span><span class="o">)</span> <span class="c1">// If the list contains only one element,
+</span><span class="c1"></span>      <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">nums</span><span class="o">[</span><span class="n">left</span><span class="o">];</span>  <span class="c1">// return that element
+</span><span class="c1"></span>
+    <span class="c1">// select a random pivot_index
+</span><span class="c1"></span>    <span class="n">Random</span> <span class="n">random_num</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Random</span><span class="o">();</span>
+    <span class="kt">int</span> <span class="n">pivot_index</span> <span class="o">=</span> <span class="n">left</span> <span class="o">+</span> <span class="n">random_num</span><span class="o">.</span><span class="na">nextInt</span><span class="o">(</span><span class="n">right</span> <span class="o">-</span> <span class="n">left</span><span class="o">);</span> 
+    
+    <span class="n">pivot_index</span> <span class="o">=</span> <span class="n">partition</span><span class="o">(</span><span class="n">left</span><span class="o">,</span> <span class="n">right</span><span class="o">,</span> <span class="n">pivot_index</span><span class="o">);</span>
+
+    <span class="c1">// the pivot is on (N - k)th smallest position
+</span><span class="c1"></span>    <span class="k">if</span> <span class="o">(</span><span class="n">k_smallest</span> <span class="o">==</span> <span class="n">pivot_index</span><span class="o">)</span>
+      <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">nums</span><span class="o">[</span><span class="n">k_smallest</span><span class="o">];</span>
+    <span class="c1">// go left side
+</span><span class="c1"></span>    <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">k_smallest</span> <span class="o">&lt;</span> <span class="n">pivot_index</span><span class="o">)</span>
+      <span class="k">return</span> <span class="n">quickselect</span><span class="o">(</span><span class="n">left</span><span class="o">,</span> <span class="n">pivot_index</span> <span class="o">-</span> <span class="n">1</span><span class="o">,</span> <span class="n">k_smallest</span><span class="o">);</span>
+    <span class="c1">// go right side
+</span><span class="c1"></span>    <span class="k">return</span> <span class="n">quickselect</span><span class="o">(</span><span class="n">pivot_index</span> <span class="o">+</span> <span class="n">1</span><span class="o">,</span> <span class="n">right</span><span class="o">,</span> <span class="n">k_smallest</span><span class="o">);</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">findKthLargest</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">nums</span><span class="o">,</span> <span class="kt">int</span> <span class="n">k</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">nums</span> <span class="o">=</span> <span class="n">nums</span><span class="o">;</span>
+    <span class="kt">int</span> <span class="n">size</span> <span class="o">=</span> <span class="n">nums</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
+    <span class="c1">// kth largest is (N - k)th smallest
+</span><span class="c1"></span>    <span class="k">return</span> <span class="n">quickselect</span><span class="o">(</span><span class="n">0</span><span class="o">,</span> <span class="n">size</span> <span class="o">-</span> <span class="n">1</span><span class="o">,</span> <span class="n">size</span> <span class="o">-</span> <span class="n">k</span><span class="o">);</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="usage---duplicate">Usage - duplicate</h4>
+<p>3-way partitioning. Partition array into 3 parts so that</p>
+<ul>
+<li>Entries between lt and gt equal to partition item v.</li>
+<li>No larger entries to left of lt</li>
+<li>No smaller entries to right of gt.</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">private static void sort(Comparable[] a,  int lo, int hi)
+{
+	if(hi&lt;=lo) return;
+	int. lt =0,  gt = hi;
+	Compareable v = a[lo];
+	int i=lo;
+	while(i&lt;=gt){
+		int cmp = a[i].compareTo(v);
+		if(cmp&lt;0) exch(a, lt++, i++);
+		else if(cmp&gt;0) exch(a, i, gt--);
+		else i++;
+	}
+	sort(a, lo, lt-1);
+	sort(a, gt+1, hi);
+}
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="priority-queue">Priority Queue</h1>
+<p>A Priority Queue supports two operations: <em>remove the maximum</em>/minimum and <em>insert</em>. we consider a classic priority-queue implementation based on the <em>binary heap</em> data structure, where items are kept in an array, subject to certain ordering constraints that allow for efficient (logarithmic-time) implementations of <em>remove the maximum</em> and <em>insert</em>.</p>
+<h3 id="heap">Heap</h3>
+<p>binary tree is <em>heap-ordered</em> if the key in each node is larger than or equal to the keys in that node’s two children (if any).</p>
+<p>A <em>binary heap</em> is a collection of keys arranged in a complete heap-or- dered binary tree, represented in level order in an array (not using the first entry).</p>
+<h5 id="heap-prority-queue">Heap Prority Queue</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MaxPQ</span><span class="o">&lt;</span><span class="n">Key</span> <span class="kd">extends</span> <span class="n">Comparable</span><span class="o">&lt;</span><span class="n">Key</span><span class="o">&gt;&gt;</span>
+  <span class="o">{</span>
+			<span class="kd">private</span> <span class="n">Key</span><span class="o">[]</span> <span class="n">pq</span><span class="o">;</span> <span class="c1">// heap-ordered complete binary tree 
+</span><span class="c1"></span>			<span class="kd">private</span> <span class="kt">int</span> <span class="n">N</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="c1">// in pq[1..N] with pq[0] unused
+</span><span class="c1"></span>     	
+     	<span class="kd">public</span> <span class="nf">MaxPQ</span><span class="o">(</span><span class="kt">int</span> <span class="n">maxN</span><span class="o">)</span>
+     <span class="o">{</span>  <span class="n">pq</span> <span class="o">=</span> <span class="o">(</span><span class="n">Key</span><span class="o">[])</span> <span class="k">new</span> <span class="n">Comparable</span><span class="o">[</span><span class="n">maxN</span><span class="o">+</span><span class="n">1</span><span class="o">];</span>  <span class="o">}</span>
+     
+ 			<span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isEmpty</span><span class="o">()</span>
+			<span class="o">{</span>  <span class="k">return</span> <span class="n">N</span> <span class="o">==</span> <span class="n">0</span><span class="o">;</span>  <span class="o">}</span>
+
+			<span class="kd">public</span> <span class="kt">int</span> <span class="nf">size</span><span class="o">()</span>
+			<span class="o">{</span>  <span class="k">return</span> <span class="n">N</span><span class="o">;</span>  <span class="o">}</span>
+
+			<span class="kd">public</span> <span class="kt">void</span> <span class="nf">insert</span><span class="o">(</span><span class="n">Key</span> <span class="n">v</span><span class="o">)</span>
+			<span class="o">{</span>
+				<span class="n">pq</span><span class="o">[++</span><span class="n">N</span><span class="o">]</span> <span class="o">=</span> <span class="n">v</span><span class="o">;</span>
+				<span class="n">swim</span><span class="o">(</span><span class="n">N</span><span class="o">);</span> <span class="o">}</span>
+			
+			<span class="kd">public</span> <span class="n">Key</span> <span class="nf">delMax</span><span class="o">()</span>
+			<span class="o">{</span>
+				<span class="n">Key</span> <span class="n">max</span> <span class="o">=</span> <span class="n">pq</span><span class="o">[</span><span class="n">1</span><span class="o">];</span> <span class="c1">// Retrieve max key from top.
+</span><span class="c1"></span>				<span class="n">exch</span><span class="o">(</span><span class="n">1</span><span class="o">,</span> <span class="n">N</span><span class="o">--);</span>   <span class="c1">// Exchange with last item.
+</span><span class="c1"></span>				<span class="n">pq</span><span class="o">[</span><span class="n">N</span><span class="o">+</span><span class="n">1</span><span class="o">]</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>   <span class="c1">// Avoid loitering.
+</span><span class="c1"></span>				<span class="n">sink</span><span class="o">(</span><span class="n">1</span><span class="o">);</span>  <span class="c1">// Restore heap property.
+</span><span class="c1"></span>				<span class="k">return</span> <span class="n">max</span><span class="o">;</span> <span class="o">}</span>
+
+     	<span class="kd">private</span> <span class="kt">boolean</span> <span class="nf">less</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">,</span> <span class="kt">int</span> <span class="n">j</span><span class="o">)</span>
+     	<span class="kd">private</span> <span class="kt">void</span> <span class="nf">exch</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">,</span> <span class="kt">int</span> <span class="n">j</span><span class="o">)</span>
+     	
+      <span class="kd">private</span> <span class="kt">void</span> <span class="nf">swim</span><span class="o">(</span><span class="kt">int</span> <span class="n">k</span><span class="o">)</span>
+  		<span class="o">{</span>
+     		<span class="k">while</span> <span class="o">(</span><span class="n">k</span> <span class="o">&gt;</span> <span class="n">1</span> <span class="o">&amp;&amp;</span> <span class="n">less</span><span class="o">(</span><span class="n">k</span><span class="o">/</span><span class="n">2</span><span class="o">,</span> <span class="n">k</span><span class="o">))</span>
+     		<span class="o">{</span>
+        <span class="n">exch</span><span class="o">(</span><span class="n">k</span><span class="o">/</span><span class="n">2</span><span class="o">,</span> <span class="n">k</span><span class="o">);</span>
+				<span class="n">k</span> <span class="o">=</span> <span class="n">k</span><span class="o">/</span><span class="n">2</span><span class="o">;</span> 
+        <span class="o">}</span>
+			<span class="o">}</span>
+        
+        
+     	<span class="kd">private</span> <span class="kt">void</span> <span class="nf">sink</span><span class="o">(</span><span class="kt">int</span> <span class="n">k</span><span class="o">)</span>
+  		<span class="o">{</span>
+     		<span class="k">while</span> <span class="o">(</span><span class="n">2</span><span class="o">*</span><span class="n">k</span> <span class="o">&lt;=</span> <span class="n">N</span><span class="o">)</span>
+     	<span class="o">{</span>
+        <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">2</span><span class="o">*</span><span class="n">k</span><span class="o">;</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">j</span> <span class="o">&lt;</span> <span class="n">N</span> <span class="o">&amp;&amp;</span> <span class="n">less</span><span class="o">(</span><span class="n">j</span><span class="o">,</span> <span class="n">j</span><span class="o">+</span><span class="n">1</span><span class="o">))</span> <span class="n">j</span><span class="o">++;</span>
+        <span class="k">if</span> <span class="o">(!</span><span class="n">less</span><span class="o">(</span><span class="n">k</span><span class="o">,</span> <span class="n">j</span><span class="o">))</span> <span class="k">break</span><span class="o">;</span>
+        <span class="n">exch</span><span class="o">(</span><span class="n">k</span><span class="o">,</span> <span class="n">j</span><span class="o">);</span>
+        <span class="n">k</span> <span class="o">=</span> <span class="n">j</span><span class="o">;</span>
+			<span class="o">}</span> 
+    <span class="o">}</span>
+        
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="heap-sort">Heap Sort</h3>
+<p>We insert all the items to be sorted into a minimum-oriented priority queue, then repeatedly use <em>remove the minimum</em> to remove them all in order. Heapsort breaks into two phases: <em>heap construction</em>, where we reorganize the original array into a heap, and the <em>sortdown</em>, where we pull the items out of the heap in decreas- ing order to build the sorted result.</p>
+<h5 id="heap-sort-1">Heap Sort</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">sort</span><span class="o">(</span><span class="n">Comparable</span><span class="o">[]</span> <span class="n">a</span><span class="o">)</span>
+<span class="o">{</span>
+		<span class="kt">int</span> <span class="n">N</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
+		<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="n">N</span><span class="o">/</span><span class="n">2</span><span class="o">;</span> <span class="n">k</span> <span class="o">&gt;=</span> <span class="n">1</span><span class="o">;</span> <span class="n">k</span><span class="o">--)</span>
+        <span class="n">sink</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">k</span><span class="o">,</span> <span class="n">N</span><span class="o">);</span>
+    <span class="k">while</span> <span class="o">(</span><span class="n">N</span> <span class="o">&gt;</span> <span class="n">1</span><span class="o">)</span>
+     <span class="o">{</span>
+				<span class="n">exch</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">1</span><span class="o">,</span> <span class="n">N</span><span class="o">--);</span>
+        <span class="n">sink</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">1</span><span class="o">,</span> <span class="n">N</span><span class="o">);</span>
+     <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Time Complexity: Nlog(N) guarantee</p>
+<p>Space: O(1) in place</p>
+<h5 id="example-question">Example Question</h5>
+<p>Given an array of integers <code>nums</code>, sort the array in ascending order.</p>
+<p><strong>Example 1:</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">Input: nums = [5,2,3,1]
+Output: [1,2,3,5]
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>Example 2:</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">Input: nums = [5,1,1,2,0,0]
+Output: [0,0,1,1,2,5]
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 50000</code></li>
+<li><code>-50000 &lt;= nums[i] &lt;= 50000</code></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+    
+    <span class="kd">public</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">sortArray</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">nums</span><span class="o">)</span> <span class="o">{</span>
+
+        <span class="c1">// rearrange the given array to build the heap
+</span><span class="c1"></span>        <span class="kt">int</span> <span class="n">n</span><span class="o">=</span><span class="n">nums</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">n</span><span class="o">/</span><span class="n">2</span><span class="o">-</span><span class="n">1</span><span class="o">;</span><span class="n">i</span><span class="o">&gt;=</span><span class="n">0</span><span class="o">;--</span><span class="n">i</span><span class="o">)</span>
+            <span class="n">heapify</span><span class="o">(</span><span class="n">nums</span><span class="o">,</span> <span class="n">n</span><span class="o">,</span> <span class="n">i</span><span class="o">);</span>
+
+        <span class="c1">// extract the min from heap
+</span><span class="c1"></span>        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">n</span><span class="o">-</span><span class="n">1</span><span class="o">;</span><span class="n">i</span><span class="o">&gt;=</span><span class="n">0</span><span class="o">;--</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>
+
+            <span class="c1">// move root to the last
+</span><span class="c1"></span>            <span class="n">swap</span><span class="o">(</span><span class="n">nums</span><span class="o">,</span> <span class="n">0</span><span class="o">,</span><span class="n">i</span><span class="o">);</span>
+            <span class="n">heapify</span><span class="o">(</span><span class="n">nums</span><span class="o">,</span> <span class="n">i</span><span class="o">,</span> <span class="n">0</span><span class="o">);</span>
+        <span class="o">}</span>
+
+        <span class="k">return</span> <span class="n">nums</span><span class="o">;</span>
+    <span class="o">}</span>
+
+
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">heapify</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">nums</span><span class="o">,</span> <span class="kt">int</span> <span class="n">n</span><span class="o">,</span> <span class="kt">int</span> <span class="n">i</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">parent</span> <span class="o">=</span> <span class="n">i</span><span class="o">;</span> <span class="c1">// root
+</span><span class="c1"></span>        <span class="kt">int</span> <span class="n">left</span> <span class="o">=</span> <span class="n">2</span><span class="o">*</span><span class="n">i</span> <span class="o">+</span> <span class="n">1</span><span class="o">;</span> <span class="c1">// left child
+</span><span class="c1"></span>        <span class="kt">int</span> <span class="n">right</span> <span class="o">=</span> <span class="n">2</span><span class="o">*</span><span class="n">i</span> <span class="o">+</span> <span class="n">2</span><span class="o">;</span> <span class="c1">// right child
+</span><span class="c1"></span>
+        <span class="k">if</span><span class="o">(</span><span class="n">left</span><span class="o">&lt;</span><span class="n">n</span> <span class="o">&amp;&amp;</span> <span class="n">nums</span><span class="o">[</span><span class="n">left</span><span class="o">]&gt;</span><span class="n">nums</span><span class="o">[</span><span class="n">parent</span><span class="o">])</span> <span class="o">{</span>
+            <span class="n">parent</span><span class="o">=</span><span class="n">left</span><span class="o">;</span>
+        <span class="o">}</span>
+
+        <span class="k">if</span><span class="o">(</span><span class="n">right</span><span class="o">&lt;</span><span class="n">n</span> <span class="o">&amp;&amp;</span> <span class="n">nums</span><span class="o">[</span><span class="n">right</span><span class="o">]&gt;</span><span class="n">nums</span><span class="o">[</span><span class="n">parent</span><span class="o">])</span> <span class="o">{</span>
+            <span class="n">parent</span><span class="o">=</span><span class="n">right</span><span class="o">;</span>
+        <span class="o">}</span>
+
+        <span class="k">if</span><span class="o">(</span><span class="n">parent</span> <span class="o">!=</span> <span class="n">i</span><span class="o">)</span> <span class="o">{</span>
+            <span class="c1">// heapify
+</span><span class="c1"></span>            <span class="n">swap</span><span class="o">(</span><span class="n">nums</span><span class="o">,</span> <span class="n">parent</span><span class="o">,</span> <span class="n">i</span><span class="o">);</span>
+            <span class="n">heapify</span><span class="o">(</span><span class="n">nums</span><span class="o">,</span> <span class="n">n</span><span class="o">,</span> <span class="n">parent</span><span class="o">);</span>
+        <span class="o">}</span>
+
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">swap</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">nums</span><span class="o">,</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">,</span> <span class="kt">int</span> <span class="n">j</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">nums</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
+        <span class="n">nums</span><span class="o">[</span><span class="n">i</span><span class="o">]=</span><span class="n">nums</span><span class="o">[</span><span class="n">j</span><span class="o">];</span>
+        <span class="n">nums</span><span class="o">[</span><span class="n">j</span><span class="o">]</span> <span class="o">=</span> <span class="n">temp</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="summary">Summary</h1>
+<p><img src="/image/sorting.png" alt="sorting"></p>
+    </div>
+
+    
+    
+
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="https://yngyuan.github.io/tags/leetcode/">leetcode</a>
+          <a href="https://yngyuan.github.io/tags/sorting/">sorting</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/just-a-little-bit/">
+            
+            <i class="iconfont">
+              <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
+</svg>
+
+            </i>
+            <span class="prev-text nav-default">Just a Little Bit</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/two-sum-and-some-more/">
+            <span class="next-text nav-default">Two Sum and Some More</span>
+            <span class="prev-text nav-mobile">Next</span>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+            </i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+  
+  
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="icon-links">
+  
+  
+    <a href="mailto:zedd.yuan@utexas.edu" rel="me noopener" class="iconfont"
+      title="email" >
+      <svg class="icon" viewBox="0 0 1451 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M664.781909 681.472759 0 97.881301C0 3.997201 71.046997 0 71.046997 0L474.477909 0 961.649408 0 1361.641813 0C1361.641813 0 1432.688811 3.997201 1432.688811 97.881301L771.345323 681.472759C771.345323 681.472759 764.482731 685.154773 753.594283 688.65053L753.594283 688.664858C741.602731 693.493018 729.424896 695.068979 718.077952 694.839748 706.731093 695.068979 694.553173 693.493018 682.561621 688.664858L682.561621 688.65053C671.644501 685.140446 664.781909 681.472759 664.781909 681.472759L664.781909 681.472759ZM718.063616 811.603883C693.779541 811.016482 658.879232 802.205449 619.10784 767.734955 542.989056 701.759633 0 212.052267 0 212.052267L0 942.809523C0 942.809523 0 1024 83.726336 1024L682.532949 1024 753.579947 1024 1348.948139 1024C1432.688811 1024 1432.688811 942.809523 1432.688811 942.809523L1432.688811 212.052267C1432.688811 212.052267 893.138176 701.759633 817.019477 767.734955 777.248 802.205449 742.347691 811.03081 718.063616 811.603883L718.063616 811.603883Z"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://www.linkedin.com/in/theyuan/" rel="me noopener" class="iconfont"
+      title="linkedin"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="33" height="33">
+  <path d="M872.405333 872.618667h-151.637333v-237.610667c0-56.661333-1.152-129.578667-79.018667-129.578667-79.061333 0-91.136 61.653333-91.136 125.397334v241.792H398.976V384h145.664v66.602667h1.962667c20.352-38.4 69.845333-78.933333 143.786666-78.933334 153.642667 0 182.058667 101.12 182.058667 232.746667v268.202667zM227.712 317.141333a87.978667 87.978667 0 0 1-88.021333-88.106666 88.064 88.064 0 1 1 88.021333 88.106666z m76.032 555.477334H151.68V384h152.064v488.618667zM948.266667 0H75.562667C33.792 0 0 33.024 0 73.770667v876.458666C0 991.018667 33.792 1024 75.562667 1024h872.576C989.866667 1024 1024 991.018667 1024 950.229333V73.770667C1024 33.024 989.866667 0 948.138667 0h0.128z"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://github.com/yngyuan" rel="me noopener" class="iconfont"
+      title="github"  target="_blank"
+      >
+      <svg class="icon" style="" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M512 12.672c-282.88 0-512 229.248-512 512 0 226.261333 146.688 418.133333 350.08 485.76 25.6 4.821333 34.986667-11.008 34.986667-24.618667 0-12.16-0.426667-44.373333-0.64-87.04-142.421333 30.890667-172.458667-68.693333-172.458667-68.693333C188.672 770.986667 155.008 755.2 155.008 755.2c-46.378667-31.744 3.584-31.104 3.584-31.104 51.413333 3.584 78.421333 52.736 78.421333 52.736 45.653333 78.293333 119.850667 55.68 149.12 42.581333 4.608-33.109333 17.792-55.68 32.426667-68.48-113.706667-12.8-233.216-56.832-233.216-253.013333 0-55.893333 19.84-101.546667 52.693333-137.386667-5.76-12.928-23.04-64.981333 4.48-135.509333 0 0 42.88-13.738667 140.8 52.48 40.96-11.392 84.48-17.024 128-17.28 43.52 0.256 87.04 5.888 128 17.28 97.28-66.218667 140.16-52.48 140.16-52.48 27.52 70.528 10.24 122.581333 5.12 135.509333 32.64 35.84 52.48 81.493333 52.48 137.386667 0 196.693333-119.68 240-233.6 252.586667 17.92 15.36 34.56 46.762667 34.56 94.72 0 68.522667-0.64 123.562667-0.64 140.202666 0 13.44 8.96 29.44 35.2 24.32C877.44 942.592 1024 750.592 1024 524.672c0-282.752-229.248-512-512-512"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://www.instagram.com/yyurio9826/" rel="me noopener" class="iconfont"
+      title="instagram"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M853.333333 277.333333C853.333333 289.28 843.946667 298.666667 832 298.666667L746.666667 298.666667C734.72 298.666667 725.333333 289.28 725.333333 277.333333L725.333333 192C725.333333 180.053333 734.72 170.666667 746.666667 170.666667L832 170.666667C843.946667 170.666667 853.333333 180.053333 853.333333 192M192 853.333333C180.053333 853.333333 170.666667 843.946667 170.666667 832L170.666667 469.333333 259.84 469.333333C257.28 482.986667 256 497.493333 256 512 256 653.226667 370.773333 768 512 768 653.226667 768 768 653.226667 768 512 768 497.493333 766.293333 482.986667 764.16 469.333333L853.333333 469.333333 853.333333 832C853.333333 843.946667 843.946667 853.333333 832 853.333333M512 341.333333C606.293333 341.333333 682.666667 417.706667 682.666667 512 682.666667 606.293333 606.293333 682.666667 512 682.666667 417.706667 682.666667 341.333333 606.293333 341.333333 512 341.333333 417.706667 417.706667 341.333333 512 341.333333M853.333333 85.333333 170.666667 85.333333C123.306667 85.333333 85.333333 123.306667 85.333333 170.666667L85.333333 853.333333C85.333333 900.266667 123.733333 938.666667 170.666667 938.666667L853.333333 938.666667C900.266667 938.666667 938.666667 900.266667 938.666667 853.333333L938.666667 170.666667C938.666667 123.306667 900.266667 85.333333 853.333333 85.333333Z"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://www.goodreads.com/user/show/109971038-zedyuan" rel="me noopener" class="iconfont"
+      title="goodreads"  target="_blank"
+      >
+      <svg viewBox="0 0 128 128" version="1.1"
+  width="32" height="32">
+  <path d="M 85.685714,45.48571 C 87.142857,56.14286 84.342857,68.05714 75.428571,74.25714 69.057143,78.68571 60.342857,78.28571 55.2,75.88571 44.6,70.94286 41.057143,59.14286 41.828571,48.11429 c 1.228572,-17.4 11.685715,-25.11429 21.514286,-25 13.4,-0.0571 20.514286,9.08571 22.342857,22.37142 z M 128,16 v 96 c 0,8.82857 -7.17143,16 -16,16 H 16 C 7.1714286,128 0,120.82857 0,112 V 16 C 0,7.17143 7.1714286,0 16,0 h 96 c 8.82857,0 16,7.17143 16,16 z M 94.285714,80.34286 c 0,0 -0.02857,-9.71429 -0.02857,-62.08572 H 85.97143 V 29.77143 C 85.742858,29.85713 85.628572,29.62857 85.514287,29.42857 82.771429,23.51429 75.257143,16.2 63.8,16.28571 48.971429,16.4 38.885714,25.2 35.057143,38.51429 33.828571,42.77143 33.4,47.11429 33.485714,51.54286 33.971429,73.8 46.371429,85.2 65.6,84.45714 73.857143,84.14286 81.171429,79.6 85.314286,71.54286 85.457143,71.25714 85.628571,71 85.8,70.71429 c 0.05714,0.0286 0.114286,0.0286 0.171429,0.0571 0.08571,1.08571 0.05714,8.77143 0.02857,9.85714 -0.05714,4.22857 -0.571429,8.42857 -2.057143,12.42857 -2.228571,6 -6.371428,9.91429 -12.714286,11.28572 -5.085714,1.11428 -10.171428,1.08571 -15.2,-0.34286 C 49.885714,102.25714 45.6,98.57143 44.285714,92.05714 44.2,91.6 43.914286,91.68571 43.628571,91.68571 H 35.971429 C 36.2,94.71429 36.885714,97.48571 38.4,100.02857 45.314286,111.6 62.028571,113.88571 75.028571,110.71429 89.285714,107.2 94.257143,95.02857 94.285714,80.34286 Z" />
+</svg>
+
+    </a>
+
+
+
+
+
+
+
+
+
+
+ 
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2020 -
+    2021
+    <span class="heart">
+      
+      <i class="iconfont">
+        <svg class="icon" viewBox="0 0 1025 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="14" height="14">
+  <path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7 0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1 0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2 0.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2 0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3 0.1-42.5-8-83.6-24-122.2z"
+   fill="#8a8a8a"></path>
+</svg>
+
+      </i>
+    </span><span class="author">
+        Yang Yuan
+        
+      </span></span>
+
+  
+  
+
+  
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont">
+        
+        <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="35" height="35">
+  <path d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"></path>
+</svg>
+
+      </i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+
+
+
+
+<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

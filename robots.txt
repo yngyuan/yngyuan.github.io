@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://yngyuan.github.io/sitemap.xml

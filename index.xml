@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Yang Yuan&#39;s Blog</title>
+    <link>https://yngyuan.github.io/</link>
+    <description>Recent content on Yang Yuan&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 27 Apr 2020 15:40:33 -0500</lastBuildDate>
+    
+        <atom:link href="https://yngyuan.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About</title>
+      <link>https://yngyuan.github.io/about/</link>
+      <pubDate>Mon, 27 Apr 2020 15:40:33 -0500</pubDate>
+      
+      <guid>https://yngyuan.github.io/about/</guid>
+      
+        <description>Hello world！This is Yang. Yang is a graduate student pursuing a master&amp;rsquo;s degree in Information Science/Studies at the University of Texas at Austin. He majored in Information and Computing Science in his undergrad at Beijing University of Posts and Telecommunications.
+Yang can wear lots of hats and has internship experiences in Vendor Management, Data Analytics, and Product Management at large tech companies like Amazon, China Telecom and Tencent. He has a diverse skillset of UX Design and Research, Data Science, Software Engineering and Product Management.</description>
+      
+    </item>
+    
+    <item>
+      <title>User Stories Applied Notes Part 1</title>
+      <link>https://yngyuan.github.io/post/user-stories-applied-notes-part-1/</link>
+      <pubDate>Sun, 08 Nov 2020 00:30:14 -0600</pubDate>
+      
+      <guid>https://yngyuan.github.io/post/user-stories-applied-notes-part-1/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>20 Years of Product Management</title>
+      <link>https://yngyuan.github.io/post/20-years-of-product-management/</link>
+      <pubDate>Sun, 26 Jul 2020 20:46:45 -0500</pubDate>
+      
+      <guid>https://yngyuan.github.io/post/20-years-of-product-management/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Meet Redis</title>
+      <link>https://yngyuan.github.io/post/meet-redis/</link>
+      <pubDate>Fri, 24 Jul 2020 13:30:24 -0500</pubDate>
+      
+      <guid>https://yngyuan.github.io/post/meet-redis/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>House Robbers</title>
+      <link>https://yngyuan.github.io/post/house-robbers/</link>
+      <pubDate>Sun, 19 Jul 2020 20:35:45 -0500</pubDate>
+      
+      <guid>https://yngyuan.github.io/post/house-robbers/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Microservices Foundations</title>
+      <link>https://yngyuan.github.io/post/microservices-foundations/</link>
+      <pubDate>Sat, 18 Jul 2020 22:09:50 -0500</pubDate>
+      
+      <guid>https://yngyuan.github.io/post/microservices-foundations/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Best Time to Buy and Sell Stock</title>
+      <link>https://yngyuan.github.io/post/best-time-to-buy-and-sell-stock/</link>
+      <pubDate>Mon, 13 Jul 2020 17:20:39 -0500</pubDate>
+      
+      <guid>https://yngyuan.github.io/post/best-time-to-buy-and-sell-stock/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Just a Little Bit</title>
+      <link>https://yngyuan.github.io/post/just-a-little-bit/</link>
+      <pubDate>Wed, 01 Jul 2020 23:19:55 -0500</pubDate>
+      
+      <guid>https://yngyuan.github.io/post/just-a-little-bit/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Sorting Things Out</title>
+      <link>https://yngyuan.github.io/post/sorting-things-out/</link>
+      <pubDate>Wed, 10 Jun 2020 09:59:54 -0500</pubDate>
+      
+      <guid>https://yngyuan.github.io/post/sorting-things-out/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Two Sum and Some More</title>
+      <link>https://yngyuan.github.io/post/two-sum-and-some-more/</link>
+      <pubDate>Wed, 03 Jun 2020 10:38:01 -0500</pubDate>
+      
+      <guid>https://yngyuan.github.io/post/two-sum-and-some-more/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Distributed Systems in One Lesson</title>
+      <link>https://yngyuan.github.io/post/distributed-system-in-one-lesson/</link>
+      <pubDate>Tue, 19 May 2020 23:21:34 -0500</pubDate>
+      
+      <guid>https://yngyuan.github.io/post/distributed-system-in-one-lesson/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>OKR and GTD</title>
+      <link>https://yngyuan.github.io/post/okr-and-gtd/</link>
+      <pubDate>Sat, 09 May 2020 10:14:19 -0500</pubDate>
+      
+      <guid>https://yngyuan.github.io/post/okr-and-gtd/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://yngyuan.github.io/2020%E6%80%BB%E7%BB%93%E8%87%AA%E5%B7%B1%E4%BD%9C%E4%B8%BA%E6%96%B9%E6%B3%95%E5%9C%A8%E5%BE%B7%E5%B7%9E%E7%9A%84%E5%B7%B4%E9%BB%8E/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yngyuan.github.io/2020%E6%80%BB%E7%BB%93%E8%87%AA%E5%B7%B1%E4%BD%9C%E4%B8%BA%E6%96%B9%E6%B3%95%E5%9C%A8%E5%BE%B7%E5%B7%9E%E7%9A%84%E5%B7%B4%E9%BB%8E/</guid>
+      
+        <description>[md]
+0 前言 2019年是我第一年开始写想到哪写到哪的总结，总结难写，要把线性的生活组织成网，而我太懒了。今年总结更难写，因为没有生活。纽约一行回奥斯汀后，今天和昨天没有区别，和6个月前的一天也没有什么区别。于是电影，音乐、单口喜剧、播客、和书就是我全部的生活（还有P站），也自然成了我全部的总结。
+我试图尽可能做到坦诚地展示全貌，包括脆弱的一面，把写作作为与自己和解的方式。我也在纠结，当我有意识地、公开地反思的时候，反思的一部分意义是不是被消解掉了，变成了另一种展示？而当我带着清醒的批判意识在展示表演性的时候，表演是不是被默许了？不管怎样，发出来就当交个朋友。
+1 书接上回 去年我声称“阿姨，我想通了”。然后进入了人生停滞的一年，没有结交新的朋友，没有建立新的连接，没有找到富婆。
+找富婆及其镜像傍大款，不考虑道德层面，如人类学家项飙所说“婚姻可以成为有意思的再分配机制，有钱的跟有才的人结婚，没才的学点才，没钱的也拿到点钱，现在这个不允许了。拒绝再分配，这是中国一个重要的社会心态。”
+如今太多人都满是阶级下滑的焦虑，以至于像“陌上花开”这种相亲局竟然还能存在。他们对婚姻有着同质化的想象，有流水线标准化的自我介绍，是被学校、卷尺、磅秤和银行账户定义的没有数字不会说话星人——用数字代表自己在正态分布的位置、存在的时间，头顶和脚底的温差和社会化程度。
+点到为止，听者有心。
+去年的一个目标是成为一个生产者，长久以来，我与世界的关系是作为一个消费者，消费物质或者消费内容，2020年我希望做一个生产者甚至创作者；另一个目标是英文为原文的书不读译本，而这比看起来要难一些。
+与创作者相对的概念应是消费者，各种层面上的消费者。这个目标的契机可能是因为看到了像北邮学弟何同学这样把兴趣和天赋结合起来，取得很好成绩的内容创作者。六度分隔理论在这种时候往往成为同侪压力的来源，但这种情况下，我没有觉得压力，倒是可以坦然承认很羡慕。
+年底再看，虽然我产量不高，总归是生产了些东西，包括5篇公众号文章，10篇英文博客（笔记为主），5篇在Toastmaster俱乐部的英文演讲，9个B站翻唱视频，甚至一度凭借翻唱《梦幻丽莎发廊》成为音乐区单日播放量前1%的up主（树大招风，因版权问题被下架）。
+（图1：被下架视频的封面）
+最近培养的一个新爱好是摄影，在失控的一年，选择画面、按下快门是难得的权力。就像星巴克出售的其实是拥有选择的权利的幻觉，摄影提供了一种抽离现实、在一瞬间获得控制的幻觉。
+“一如相机是枪支的升华，拍摄某人也是一种升华式的谋杀——一种软谋杀，正好适合一个悲哀、受惊的时代。”如苏珊桑塔格在《On Photography》(论摄影)指出了摄影的隐喻。
+我本以为这是讲方法的一本书，她优雅复杂的长难句让我梦回GRE考试，智识上的碾压通过文字差点一次摧毁我的两个爱好。
+但是对于创作者来说，自己才是自己最恶毒的批评家(You are your worst critic.) 每次发出来任何东西，短暂的自我陶醉之后我都觉得明明这么普通，却还这么自信。有时候不得不喝两杯，不是为了寻找灵感，而是只有微醺的状态下，才能让内心的毒舌闭嘴。
+（图2：曾去买酒的小店）
+作为创作者有两个问题需要考虑，一个是原创性，即找到自己的声音；另一个是商业化，即艺术与商业的平衡。
+对于原创性，令人感到宽慰的是，奥斯汀克利昂在《Steal Like an Artist》（像艺术家一样偷）说现在没有完全意义上原创的东西，只不过是有时候我们不知道创作者的参考和所受的启发，甚至创作者自己也不是很清楚。
+至于商业化，我也发现了确实存在某些财富密码，以及这些财富密码对创作者的异化。一旦尝到甜头而陷入其中，创作便由自我表达变为给推荐算法打工。我试图用增长黑客的方法来增加曝光，比如对封面和文案的A/B测试。很快发现，唯增长论的逻辑是非常单一的，被推荐、受欢迎变得比内容本身更加重要。
+被异化而不自知是可悲的，而与主动与魔鬼做交易出卖灵魂是可怕的。某些对冲基金经理们、推荐算法奶头乐、黄赌毒的大佬们，亲自带货的院士们，在全人类的灾难面前，第一反应是可以靠这个赚钱，比灾难本身更可怕。
+2 狗屎工作、内卷、去南极 谈到工作和异化，1930年凯恩斯曾经预测到世纪末，随着科技的发展，英美等发达国家会实现每周15小时工作制。这个预测偏的离谱。
+似乎因为消费主义的蔓延，在更短的工作时间和更多的玩具、衣服、娱乐方式之间，我们集体选择了后者。人类学家大卫格雷柏在《Bullshit Jobs》（狗屎工作）提出了“狗屎工作理论”。
+一方面统治阶级已经意识到，快乐、有生产力、又拥有自由时间的民众是一种致命的危险；另一方面，如今的局面可能是一个近百年的试错探索而自然选择留下的——还有什么比现有制度更适合维持金融资本的力量呢？
+真正的打工人（外卖员、清洁工等）往往被无情地压榨和剥削，就连”早安，打工人“的口号也成为被消费的对象。而狗屎工作从业者，因为自身职业性质（如企业法律师），更容易站在规则制定者的一方。尽管客观上也很难定义一个狗屎工作，但是如果你觉得自己做的事情没有任何意义，那就是了。
+还不如去南极。
+纪录片《Encounter at the end of the World》(在世界尽头相遇) 拍摄了在南极的一群人，有开推土机的哲学家，开公交的银行家，在餐厅洗碗的语言学博士。我为每个离群者的故事感动，但纪录片里有一只企鹅让我“破防”了，我发现我的泪点是各种堂吉诃德式的故事。
+（图3：纪录片《Encounter at the end of the World》截图）
+这只企鹅让我想起前几年西雅图一个偷飞机的人。
+几年前在西雅图机场，一位名叫理查德的男子，偷偷溜进了一架飞机的驾驶室，开着飞机在天空中遨游了90分钟，最后坠毁在一个仅有17人居住的小岛上，除了他，没有其他人员伤亡。他此前是一名地勤人员，朋友说他正直善良、有一颗金子般的心。
+和地面通信时，理查德说“我只是一个已经坏掉的人，我猜是不知道哪里有几颗螺丝松了吧。以前我没意识到，刚刚才弄明白。” 他还说他想去看一条逆戟鲸，那是一只加拿大标记的鲸鱼，因为自己的幼鲸夭折，非常痛苦，抱着死去的幼鲸在海里游了17天，不吃不喝，直到幼鲸的尸体开始腐烂。
+当然我要说偷飞机是不对的（鉴于就是当前的网络言论环境）。
+对离群者的故事的痴迷，可能是因为知道自己不可能做到放下一切去南极，也可能因为今年疫情之中，发现了那些被视为理所当然的、打算拼命去争取的和已经获得的一切都是多么易碎，总是如临深渊，如履薄冰。
+写到这里我觉得可以写一下内卷，但是写的人太多，我便不写了。
+项飙说“中国人像蜂鸟，振动翅膀悬在空中“，以及”一切现在做的都是为了超越现在“。
+践行极简主义（真正的极简生活而非被消费符号化的极简）和斯多葛主义或许是一条出路。《A Guide to the Good Life：The Ancient Art of Stoic Joy》（生命安宁：斯多葛哲学的生活艺术）一书提出了几个原则：内化个人目标，不以物喜不以己悲 。多想一下最坏的情况，居安思危。对于不可控的欲望保持节制，以寻求内心的平静。</description>
+      
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Distributed Systems in One Lesson - Yang Yuan&#39;s Blog</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="Yang Yuan" /><meta name="description" content="Notes from Tim Berglund&#39;s speech on O&#39;Reilly Media." />
+<meta name="keywords" content="distributed system, notes" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.69.2" />
+
+
+<link rel="canonical" href="https://yngyuan.github.io/post/distributed-system-in-one-lesson/" />
+
+
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/sass/jane.min.bee9bdab7dd02331313dc4658c51f2cb3e3523c6c05a709dfbf474ab5bfad25c.css" integrity="sha256-vum9q33QIzExPcRljFHyyz41I8bAWnCd&#43;/R0q1v60lw=" media="screen" crossorigin="anonymous">
+
+
+
+
+
+<meta property="og:title" content="Distributed Systems in One Lesson" />
+<meta property="og:description" content="Notes from Tim Berglund&#39;s speech on O&#39;Reilly Media." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yngyuan.github.io/post/distributed-system-in-one-lesson/" />
+<meta property="article:published_time" content="2020-05-19T23:21:34-05:00" />
+<meta property="article:modified_time" content="2020-05-19T23:21:34-05:00" />
+<meta itemprop="name" content="Distributed Systems in One Lesson">
+<meta itemprop="description" content="Notes from Tim Berglund&#39;s speech on O&#39;Reilly Media.">
+<meta itemprop="datePublished" content="2020-05-19T23:21:34-05:00" />
+<meta itemprop="dateModified" content="2020-05-19T23:21:34-05:00" />
+<meta itemprop="wordCount" content="2144">
+
+
+
+<meta itemprop="keywords" content="distributed system," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Distributed Systems in One Lesson"/>
+<meta name="twitter:description" content="Notes from Tim Berglund&#39;s speech on O&#39;Reilly Media."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">YY</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yngyuan.github.io/">Blogs</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yngyuan.github.io/post/">Archives</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yngyuan.github.io/tags/">Tags</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yngyuan.github.io/categories/">Categories</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yngyuan.github.io/about/">About</a>
+          
+        
+      </li>
+    
+
+    
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      YY
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yngyuan.github.io/">Blogs</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yngyuan.github.io/post/">Archives</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yngyuan.github.io/tags/">Tags</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yngyuan.github.io/categories/">Categories</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yngyuan.github.io/about/">About</a>
+          
+
+        
+
+      </li>
+    
+
+    
+    
+
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">Distributed Systems in One Lesson</h1>
+      
+      <div class="post-meta">
+        <time datetime="2020-05-19" class="post-time">
+          2020-05-19
+        </time>
+        <div class="post-category">
+            <a href="https://yngyuan.github.io/categories/distributed-system/"> distributed system </a>
+            
+          </div>
+        
+
+        
+        
+
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Table of Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#what-a-day-in-a-coffee-shop-can-teach-us-about-distributed-storage--computation--messaging-and-consensus">What a day in a Coffee shop can teach us about distributed storage,  computation,  messaging and consensus.</a></li>
+      </ul>
+    </li>
+    <li><a href="#0-what-is-a-distributed-system">0 What is a Distributed System?</a>
+      <ul>
+        <li><a href="#three-characteristics">Three Characteristics</a></li>
+      </ul>
+    </li>
+    <li><a href="#1-distributed-storage">1 Distributed Storage</a>
+      <ul>
+        <li><a href="#single-master-storage">Single-Master Storage</a></li>
+        <li><a href="#read-replication">Read Replication</a></li>
+        <li><a href="#sharding">Sharding</a></li>
+        <li><a href="#consistent-hashing">Consistent Hashing</a></li>
+        <li><a href="#cap-theorem">CAP Theorem</a></li>
+        <li><a href="#distributed-transacations">Distributed Transacations</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-distributed-computation">2 Distributed Computation</a>
+      <ul>
+        <li><a href="#21-mapreduce">2.1 MapReduce</a></li>
+        <li><a href="#22-hadoop">2.2 Hadoop</a></li>
+        <li><a href="#23-spark">2.3 Spark</a></li>
+        <li><a href="#24-storm">2.4 Storm</a></li>
+        <li><a href="#25-lambda-architecture">2.5 Lambda Architecture</a></li>
+        <li><a href="#26-synchronization">2.6 Synchronization</a></li>
+        <li><a href="#27-distributed-consensus-paxos">2.7 Distributed Consensus: Paxos</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-messaging">3 Messaging</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#wrap-up">Wrap up</a>
+      <ul>
+        <li><a href="#storage">Storage</a></li>
+        <li><a href="#computation">Computation</a></li>
+        <li><a href="#synchronization">Synchronization</a></li>
+        <li><a href="#consensus">Consensus</a></li>
+        <li><a href="#messaging">Messaging</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <h3 id="what-a-day-in-a-coffee-shop-can-teach-us-about-distributed-storage--computation--messaging-and-consensus">What a day in a Coffee shop can teach us about distributed storage,  computation,  messaging and consensus.</h3>
+<p>Notes from Tim Berglund&rsquo;s speech on O&rsquo;Reilly Media.</p>
+<h2 id="0-what-is-a-distributed-system">0 What is a Distributed System?</h2>
+<blockquote>
+<p>A collection of independent computers that appear to its users as one computer.</p>
+<p>​																			Andrew Tanenbaum</p>
+</blockquote>
+<h3 id="three-characteristics">Three Characteristics</h3>
+<ul>
+<li>The computers operate concurrently</li>
+<li>The computers fail independently</li>
+<li>The computers do not share a global clock</li>
+</ul>
+<p>A pattern you will see, bad things will get hard when using distributed systems.</p>
+<h2 id="1-distributed-storage">1 Distributed Storage</h2>
+<h3 id="single-master-storage">Single-Master Storage</h3>
+<p>For a small coffee shop, one barista can easily remember all the favourite drinks of customers.</p>
+<p>eg. Tim: Americano</p>
+<p>And if Tim decides to change his favourite drink, just tell the barista and it will be changed.</p>
+<p>Now business grows and there are more baristas.</p>
+<h3 id="read-replication">Read Replication</h3>
+<p>There will be several copies of the customer&rsquo;s info on baristas, and one of them will be main barista, managing others. Now the coffee shop can take more <strong>read traffic</strong>.</p>
+<ul>
+<li>More complexity</li>
+<li>Broken Consistency</li>
+</ul>
+<h3 id="sharding">Sharding</h3>
+<p>When the coffee shop gets too popular. One manager cannot handle. So we use sharding to slice the work to three main baristas to handle more <strong>write traffic</strong>. Names from A-F goes to one main barista, F-N and N-Z  goes to another. And each can operate like the above.</p>
+<ul>
+<li>More complexity</li>
+<li>Limited data model (every query must have one common field to shard on )</li>
+<li>Limited data access patterns</li>
+</ul>
+<h3 id="consistent-hashing">Consistent Hashing</h3>
+<p>Let&rsquo;s suppose we knew we are going to be big. And we want to build this business to scale from ground up.</p>
+<p>More baristas with token of a range forming a circle. If the customer name hash is greater than one barista&rsquo;s token and smallet than the other, write to the other and so on.</p>
+<p>Tim &mdash;Hash&mdash;&gt; 9F72: Americano,</p>
+<p>To have more data redundancy we just let 2 or 3 nodes after the nodes have a replicate.</p>
+<ul>
+<li>
+<p>Consistency</p>
+<p>R+W&gt;N, R is the number of replicas agree on read, W is the number of replicas that successfully take a write. N is the numbr of replicas. We got to decide the R and W to have trade-offs like low latency with eventual consistency.</p>
+</li>
+</ul>
+<p>When to use this kind of database?</p>
+<ul>
+<li>Scale</li>
+<li>Transactional data (changes a lot)</li>
+<li>Always on</li>
+</ul>
+<h3 id="cap-theorem">CAP Theorem</h3>
+<p>It is proven that a distributed system can only have TWO of the THREE:</p>
+<ul>
+<li>Consistency (always get what you last wrote)</li>
+<li>Availability (when I try, I can read or write)</li>
+<li>Partition Tolerance (allow some nodes to be down)</li>
+</ul>
+<h3 id="distributed-transacations">Distributed Transacations</h3>
+<h4 id="acid-transactions">Acid Transactions</h4>
+<ul>
+<li>Atomic (the transaction complete completely or not at all)</li>
+<li>Consistent (When a transaction complete, the database is not broken)</li>
+<li>Isolated (4 levels of isolation)</li>
+<li>Durable (Once a transaction commits, you will be able to see it later)</li>
+</ul>
+<h4 id="odering-coffee-is-not-atomic">Odering Coffee is not atomic</h4>
+<ul>
+<li>Receive order</li>
+<li>Process payment</li>
+<li>Enqueue order</li>
+<li>Make coffee</li>
+<li>Deliver</li>
+</ul>
+<p>Different actors do all these. Task 1-3 go to one, 4-5 go to another.</p>
+<h4 id="why-split-the-work">Why split the work?</h4>
+<ul>
+<li>Parallelization (at least two are working)</li>
+<li>Uneven workloads</li>
+</ul>
+<h4 id="what-could-go-wrong">What could go wrong?</h4>
+<ul>
+<li>Payment failure</li>
+<li>Insufficient resources</li>
+<li>Equipment failure</li>
+<li>Worker failure</li>
+<li>Consumer failure</li>
+</ul>
+<h4 id="responses-to-failure">Responses to Failure</h4>
+<ul>
+<li>Write-off</li>
+<li>Retry (machine broken, try again)</li>
+<li>Compensating action (when cusumer paid but we cannot deliver)</li>
+</ul>
+<h2 id="2-distributed-computation">2 Distributed Computation</h2>
+<ul>
+<li>Scatter/Gather</li>
+<li>MapReduce</li>
+<li>Hadoop</li>
+<li>Spark</li>
+<li>Storm</li>
+</ul>
+<h3 id="21-mapreduce">2.1 MapReduce</h3>
+<p>It is a computation pattern, a math abstraction, not a program.</p>
+<ul>
+<li>All computation in two functions: Map and Reduce.</li>
+<li>Keep data (mostly) where it is.</li>
+<li>Move computeto data.</li>
+</ul>
+<p>(K, V) &ndash;&gt;  Mapper()  &ndash;&gt;  [(K,V), (K,V), &hellip;, (K, V)] &ndash;&gt; Shuffle() &ndash;&gt; (K, [V, V, &hellip;V]) &ndash;&gt; Reducer()  &ndash;&gt;[(K,V), (K,V), &hellip; (K,V)]</p>
+<h4 id="eg-word-count-poemsraventxt">eg. word count: poems/raven.txt</h4>
+<p>turn the poem into a bunch of words. and use the words as a key-value pair, key is the word and value is the count, but we only count 1 and don&rsquo;t remember if we have seen it. Then we shuffle them so that pairs with the same key gets closer to each other. The return of shuffle is like this (tapping: [1,1,1]). And the reducer will do the adding and we have the results.</p>
+<h3 id="22-hadoop">2.2 Hadoop</h3>
+<p>Hadoop is an implementation of MapReduce.</p>
+<ul>
+<li>MapReduce API</li>
+<li>MapReduce job management</li>
+<li>Distributed Filesystem (HDFS)</li>
+<li>Enormous ecosystem</li>
+</ul>
+<h4 id="hdfs">HDFS</h4>
+<ul>
+<li>Files and directories</li>
+<li>Metadata managed by a replicated master(name node) in memory</li>
+<li>Files stored in large, immutable, replicated blocks</li>
+</ul>
+<h4 id="real-world-hadoop">Real-world hadoop</h4>
+<ul>
+<li>Cloudera, Hortonworks, MapR</li>
+<li>Nobody writes map, reduce functions</li>
+<li>Hive (SQL-like interface)</li>
+<li>Integration with BI front-ends</li>
+</ul>
+<h4 id="when-to-use-hadoop">When to use Hadoop</h4>
+<ul>
+<li>Data volume is large</li>
+<li>Data velocity is low</li>
+<li>Latency SLAs are not aggressive</li>
+</ul>
+<h3 id="23-spark">2.3 Spark</h3>
+<ul>
+<li>Scatter/gather paradigm( similar to MapReduce)</li>
+<li>More general data model (RDDs)</li>
+<li>Moregeneral programming model (transform/action)</li>
+<li>Storage agnostic</li>
+</ul>
+<h4 id="whats-an-rdd">What&rsquo;s an RDD</h4>
+<p>RDD stands for resilient distributed datasource.</p>
+<ul>
+<li>Bigger than a computer</li>
+<li>Read from an input source</li>
+<li>Output of a pure function</li>
+<li>Immutable</li>
+<li>Typed</li>
+<li>Ordered</li>
+<li>Lazily evaluated</li>
+<li>Partitioned</li>
+<li>A collection of things</li>
+</ul>
+<h4 id="spark-api">Spark API</h4>
+<ul>
+<li>Transformation functions turn one RDD into another</li>
+<li>Action functions</li>
+</ul>
+<p>Hadoop and Spark are all batch mode processing frameworks.</p>
+<h3 id="24-storm">2.4 Storm</h3>
+<ul>
+<li>Streaming data processing</li>
+<li>Friendlier programming model than message-passing</li>
+<li>At-least-once processing semantics</li>
+<li>Horizontal scalability, fault tolerance</li>
+<li>Fast answers on massive-scale data</li>
+</ul>
+<h4 id="programming-model">Programming Model</h4>
+<ul>
+<li>Stream: a sequence of tuples (probably lots)</li>
+<li>Spout: a source of streams</li>
+<li>Bolt: applies a function an input stream; produces onre or more output streams</li>
+<li>Topology: a graph of spouts and bolts; a &ldquo;job&rdquo; that runs indefinitely</li>
+</ul>
+<p>Nimbus is a central coordinator of jobs. A supervisor is a node that performs processing. A task is a thread of bolt or sprout execution. A worker is a jvm process where a topology excutes.</p>
+<h4 id="stream-grouping">Stream Grouping</h4>
+<ul>
+<li>Assigns tuples to tasks through a consistent-hashing-like mechanism.</li>
+<li>Configurable
+<ul>
+<li>Shuffle Grouping: random assignment</li>
+<li>Fields Grouping: mod hash of subset of tuple fields</li>
+<li>All Grouping: send to every tasks</li>
+</ul>
+</li>
+</ul>
+<h3 id="25-lambda-architecture">2.5 Lambda Architecture</h3>
+<p>So far we have problems</p>
+<ul>
+<li>High rate of events</li>
+<li>Must store, must interpret</li>
+<li>The wrong answer, fast</li>
+<li>The right answer, slowly</li>
+</ul>
+<h4 id="architecture">Architecture</h4>
+<ul>
+<li>System input is an event system</li>
+<li>Events are immutable</li>
+<li>Batch and stream processing are functional</li>
+</ul>
+<p><strong>Big data store:</strong> we have some event stream, feed up to a long term storage, a durable resting place</p>
+<ul>
+<li>Long term storage</li>
+<li>Batch processing</li>
+<li>Slow, accurate</li>
+</ul>
+<p><strong>Append-only distributed queue:</strong> And the same data are also going to another event processing framework</p>
+<ul>
+<li>Temporary queuing</li>
+<li>Stream procesing</li>
+<li>Fast, &ldquo;wrong&rdquo;</li>
+</ul>
+<p>in the end both goes to a <strong>Fast NoSQL store</strong>.</p>
+<h4 id="why-call-it-lambda">Why call it Lambda?</h4>
+<p>Because this is funtional transformations of immuatble data.</p>
+<h3 id="26-synchronization">2.6 Synchronization</h3>
+<p>In distributed systems, &ldquo;now&rdquo; is problematic. When the copies of a data don&rsquo;t agree, options are</p>
+<ul>
+<li>Estimate the time: last write wins
+<ul>
+<li>GPS in every server (we don&rsquo;t do that)</li>
+<li>Network Time Protocol</li>
+</ul>
+</li>
+<li>Derive the time logically: vector clocks</li>
+</ul>
+<h4 id="network-time-protocol">Network Time Protocol</h4>
+<ul>
+<li>Put a very accurate clock on the Internet</li>
+<li>But network latency is variable</li>
+<li>NTP measures and acounts for latency</li>
+<li>Users layers of time servers called <em>strata</em></li>
+</ul>
+<p>Facts about NTP</p>
+<ul>
+<li>UDP port 123</li>
+<li>64-bit time stamp</li>
+<li>Year 2016 problem</li>
+</ul>
+<p>/delta = (t_3-t_0) - (t_2-t_1)</p>
+<p>more to read: There is no now: problems with simultaneity in distributed systems.</p>
+<p>If NTP is not good enough</p>
+<h4 id="vector-clocks">Vector Clocks</h4>
+<ul>
+<li>A means of proving sequence</li>
+<li>NOT for telling time</li>
+<li>We are concurrently modifying one value</li>
+<li>Every actor has an ID</li>
+<li>Every actor tracks a sequence number</li>
+<li>Consider Basho&rsquo;s famous example</li>
+</ul>
+<p>Trade-offs of vector clocks</p>
+<ul>
+<li>Cannot be wrong (Last Write Wins can) +</li>
+<li>Pushes complexity into the client -</li>
+</ul>
+<h3 id="27-distributed-consensus-paxos">2.7 Distributed Consensus: Paxos</h3>
+<ul>
+<li>We want agreement between process</li>
+<li>Process are concurrent, asynchronous and failure-prone</li>
+<li>Must meet four requirements
+<ul>
+<li>Termination: every process decides a value&rsquo;</li>
+<li>Validity: If all process propose a value, then all process decide that same value</li>
+<li>Integrity: if a process decides a value, then that value must have been proposed by another process</li>
+<li>Agreement: all process must agree on the same value</li>
+</ul>
+</li>
+</ul>
+<h4 id="paxos">Paxos</h4>
+<ul>
+<li>published in 2000</li>
+<li>Determinstic, fault-tolerant consensus protocol</li>
+<li>Used when replicating durable, mutable state</li>
+<li>Guarantees a consistent result</li>
+</ul>
+<p>In the most happy case:</p>
+<p><strong>Read</strong></p>
+<p>Client &lt;- Replica nodes 1, 2, 3</p>
+<p>If they all agree or most agree, take it.</p>
+<p>if all three are different, this is a failed read, no consensus.</p>
+<p><strong>Write</strong></p>
+<ol>
+<li>Prepare: Proposer node generates a unique and sortable sequence number with the proposal write and forward to replica nodes.</li>
+<li>Promise: Now the replica nodes are ACCEPTOR, they only accept if the sequence number is the highest for that key that they have ever seen.They send back the value they are going to write to PROPOSER.</li>
+<li>Accept Request: Proposer receives quorum, makes progress. Send out to Acceptor and they check one more time.</li>
+<li>Acceptance: And the write is done.</li>
+</ol>
+<h5 id="paxos-uses">Paxos Uses</h5>
+<ul>
+<li>Lightweit transactions on Casandra
+<ul>
+<li>Insert .. if not exists</li>
+</ul>
+</li>
+<li>Clustrix transctions</li>
+<li>BigTable&rsquo;s Chubby lock manager</li>
+<li>Master election</li>
+</ul>
+<h4 id="other-protocols">Other Protocols</h4>
+<ul>
+<li><strong>Raft</strong>: like Paxos, but understandable</li>
+<li><strong>Blockchain</strong>: like Paxos, but works when people are lying to you</li>
+</ul>
+<h2 id="3-messaging">3 Messaging</h2>
+<ul>
+<li>Means of loosely coupling subsystems</li>
+<li>Messages consumed by subscribers</li>
+<li>Created by one or more producers</li>
+<li>Organized into topics</li>
+<li>Processed by brokers</li>
+<li>Usually persistent over the short term</li>
+</ul>
+<p>Messaging Problems:</p>
+<ul>
+<li>What if a topic gets too big for one computer?</li>
+<li>What if one computer is not reliable enough?</li>
+<li>How strongly can we guarantee delivery?</li>
+</ul>
+<p>How to solve these?</p>
+<h4 id="kafka">Kafka</h4>
+<ul>
+<li>Distributed message queue</li>
+<li>Horizontally scalable, fault-tolerant</li>
+<li>Durable</li>
+<li>Fast
+<ul>
+<li>100s MB reads and writes/second</li>
+<li>Thousands of clients per broker</li>
+</ul>
+</li>
+<li>Widely deployed</li>
+<li>JVM-based(written in Scala)</li>
+<li>Native Java and Scala APIs (Akka option)</li>
+<li>Binary wire protocol</li>
+<li>Start at three nodes and grow</li>
+</ul>
+<h5 id="definations">Definations</h5>
+<ul>
+<li>Message: an immutable array of bytes</li>
+<li>Topic: a feed of messages</li>
+<li>Producer: a process that publishes messages to a topic</li>
+<li>Consumer: a single-threaded process that subscribes to a topic</li>
+<li>Broker: one of the servers that comprimes a cluster</li>
+</ul>
+<h5 id="partitioning">Partitioning</h5>
+<ul>
+<li>A scaling strategy</li>
+<li>Done in the producer by a pluggable class and a message key</li>
+<li>Order is maintained in partition only</li>
+</ul>
+<h4 id="replication">Replication</h4>
+<ul>
+<li>Brokers can fail</li>
+<li>Configurable in-sync replica sets</li>
+<li>One leader, n-1 followers</li>
+<li>Only the leader communicates with clients</li>
+<li>When the leader failed, a new leader is elected</li>
+</ul>
+<h5 id="zookeeper-in-kafka">ZooKeeper in Kafka</h5>
+<ul>
+<li>Required part of Kakfa architecture</li>
+<li>Producers use it to find partitions and replication information</li>
+<li>Consumers use it to track current index</li>
+</ul>
+<h4 id="zookeeper">ZooKeeper</h4>
+<p>ZooKeeper is a centralized service for maintaining configuration information, naming, providing distributed synchronization, and providing group services.</p>
+<ul>
+<li>Highly availabel</li>
+<li>Manages shared state of an kind</li>
+<li>Transaction control</li>
+<li>Lock management</li>
+</ul>
+<p>Fundamentally it is a distributed hierachical key-value store, the data model looks a lot like a file system, just where the files are real small.</p>
+<h5 id="architecture-1">Architecture</h5>
+<ul>
+<li>Written in Java</li>
+<li>Official APIs in C and Java</li>
+<li>In-memory (on-heap)</li>
+<li>Minimum of three nodes for production</li>
+<li>All of the nodes participate</li>
+</ul>
+<h5 id="zookeeper-ensemble">Zookeeper Ensemble</h5>
+<p>ZooKeeper people say ensemble rather than cluster.</p>
+<p>That node on the top in that colors is the leader and others are the followers. So let&rsquo;s imagine a client now is performing a read. A client can establish a session with, that is connect to and read from any of those nodes. It can talk to followers. It can talk to the leader. All of those are fine.</p>
+<p>And let&rsquo;s take a look at a write. Again, a write can be done to the master or a write can be done to a follower. If you do a write to a follower, it&rsquo;s not going to succeed until the leader gets it. That follower&rsquo;s gonna say, OK, here, let me help you with that. And it will then propagate the write to the other followers that didn&rsquo;t already have it to make sure that the clusters got the information at once. That&rsquo;s gonna be in memory, committed to those other followers before the write can be acknowledged. Now, the master is gonna look for a majority, a quorum of writes. It&rsquo;s not gonna look for unanimity, so we do have some fault tolerance here.</p>
+<h5 id="data-model">Data model</h5>
+<p>ZNodes</p>
+<p>A ZNode has a few different things. We&rsquo;ll take a look at that list in a minute. But every ZNode has a value, and children, and a few other properties. Now I&rsquo;m showing these values as strings.</p>
+<ul>
+<li>A byte array (10kmax)</li>
+<li>Timestamped</li>
+<li>Independent, non-inherited ACLs</li>
+<li>Versioned</li>
+<li>Zero or more child ZNodes</li>
+<li>Persistent or session-ephemeral</li>
+<li>Counting ZNodes</li>
+</ul>
+<p>Sessions:</p>
+<ul>
+<li>Connection between the client and a node in the ensemble</li>
+<li>Ephemeral nodes live and die with sessions</li>
+</ul>
+<p>Wathces:</p>
+<ul>
+<li>One-time trigger on ZNode values or children</li>
+<li>Asynchronous</li>
+<li>Guaranteed to be seen by the client before the data change</li>
+</ul>
+<p>ACLs:</p>
+<ul>
+<li>Apply to individual ZNodes (not children)</li>
+<li>ZNode contains a list of IDs
+<ul>
+<li>World, auth, digest, ip</li>
+</ul>
+</li>
+<li>IDs have permissions
+<ul>
+<li>CREATE, READ, WRITE, DELETE, ADMIN</li>
+</ul>
+</li>
+</ul>
+<h5 id="use-case">Use Case</h5>
+<ul>
+<li>Leader Election
+<ol>
+<li>Create a ZNode called leader-election</li>
+<li>All candidates create ephemeral sequential children</li>
+<li>The child of leader-election with the smallest sequence number is leader</li>
+<li>Watch the ZNode with the next smallest sequence number for good news</li>
+</ol>
+</li>
+<li>Distributed Locks
+<ol>
+<li>Setup: create a ZNode called resource</li>
+<li>Create ephemeral node called resource/hostname-{i}</li>
+<li>Examine children of resource, I hold the lock if my ID is lowest, Otherwise watch the ID preceding mine</li>
+<li>Upon update event, I hold the lock</li>
+<li>To release the lock, delete my ephemeral node</li>
+</ol>
+</li>
+</ul>
+<h2 id="wrap-up">Wrap up</h2>
+<h3 id="storage">Storage</h3>
+<p>Relation/Mongo, Cassandra, HDFS</p>
+<h3 id="computation">Computation</h3>
+<p>Hadoop, Spark, Storm</p>
+<h3 id="synchronization">Synchronization</h3>
+<p>NTP, vector locks</p>
+<h3 id="consensus">Consensus</h3>
+<p>Paxos, Zookeeper</p>
+<h3 id="messaging">Messaging</h3>
+<p>Kafka</p>
+    </div>
+
+    
+    
+
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="https://yngyuan.github.io/tags/distributed-system/">distributed system</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/two-sum-and-some-more/">
+            
+            <i class="iconfont">
+              <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
+</svg>
+
+            </i>
+            <span class="prev-text nav-default">Two Sum and Some More</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/okr-and-gtd/">
+            <span class="next-text nav-default">OKR and GTD</span>
+            <span class="prev-text nav-mobile">Next</span>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+            </i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+  
+  
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="icon-links">
+  
+  
+    <a href="mailto:zedd.yuan@utexas.edu" rel="me noopener" class="iconfont"
+      title="email" >
+      <svg class="icon" viewBox="0 0 1451 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M664.781909 681.472759 0 97.881301C0 3.997201 71.046997 0 71.046997 0L474.477909 0 961.649408 0 1361.641813 0C1361.641813 0 1432.688811 3.997201 1432.688811 97.881301L771.345323 681.472759C771.345323 681.472759 764.482731 685.154773 753.594283 688.65053L753.594283 688.664858C741.602731 693.493018 729.424896 695.068979 718.077952 694.839748 706.731093 695.068979 694.553173 693.493018 682.561621 688.664858L682.561621 688.65053C671.644501 685.140446 664.781909 681.472759 664.781909 681.472759L664.781909 681.472759ZM718.063616 811.603883C693.779541 811.016482 658.879232 802.205449 619.10784 767.734955 542.989056 701.759633 0 212.052267 0 212.052267L0 942.809523C0 942.809523 0 1024 83.726336 1024L682.532949 1024 753.579947 1024 1348.948139 1024C1432.688811 1024 1432.688811 942.809523 1432.688811 942.809523L1432.688811 212.052267C1432.688811 212.052267 893.138176 701.759633 817.019477 767.734955 777.248 802.205449 742.347691 811.03081 718.063616 811.603883L718.063616 811.603883Z"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://www.linkedin.com/in/theyuan/" rel="me noopener" class="iconfont"
+      title="linkedin"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="33" height="33">
+  <path d="M872.405333 872.618667h-151.637333v-237.610667c0-56.661333-1.152-129.578667-79.018667-129.578667-79.061333 0-91.136 61.653333-91.136 125.397334v241.792H398.976V384h145.664v66.602667h1.962667c20.352-38.4 69.845333-78.933333 143.786666-78.933334 153.642667 0 182.058667 101.12 182.058667 232.746667v268.202667zM227.712 317.141333a87.978667 87.978667 0 0 1-88.021333-88.106666 88.064 88.064 0 1 1 88.021333 88.106666z m76.032 555.477334H151.68V384h152.064v488.618667zM948.266667 0H75.562667C33.792 0 0 33.024 0 73.770667v876.458666C0 991.018667 33.792 1024 75.562667 1024h872.576C989.866667 1024 1024 991.018667 1024 950.229333V73.770667C1024 33.024 989.866667 0 948.138667 0h0.128z"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://github.com/yngyuan" rel="me noopener" class="iconfont"
+      title="github"  target="_blank"
+      >
+      <svg class="icon" style="" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M512 12.672c-282.88 0-512 229.248-512 512 0 226.261333 146.688 418.133333 350.08 485.76 25.6 4.821333 34.986667-11.008 34.986667-24.618667 0-12.16-0.426667-44.373333-0.64-87.04-142.421333 30.890667-172.458667-68.693333-172.458667-68.693333C188.672 770.986667 155.008 755.2 155.008 755.2c-46.378667-31.744 3.584-31.104 3.584-31.104 51.413333 3.584 78.421333 52.736 78.421333 52.736 45.653333 78.293333 119.850667 55.68 149.12 42.581333 4.608-33.109333 17.792-55.68 32.426667-68.48-113.706667-12.8-233.216-56.832-233.216-253.013333 0-55.893333 19.84-101.546667 52.693333-137.386667-5.76-12.928-23.04-64.981333 4.48-135.509333 0 0 42.88-13.738667 140.8 52.48 40.96-11.392 84.48-17.024 128-17.28 43.52 0.256 87.04 5.888 128 17.28 97.28-66.218667 140.16-52.48 140.16-52.48 27.52 70.528 10.24 122.581333 5.12 135.509333 32.64 35.84 52.48 81.493333 52.48 137.386667 0 196.693333-119.68 240-233.6 252.586667 17.92 15.36 34.56 46.762667 34.56 94.72 0 68.522667-0.64 123.562667-0.64 140.202666 0 13.44 8.96 29.44 35.2 24.32C877.44 942.592 1024 750.592 1024 524.672c0-282.752-229.248-512-512-512"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://www.instagram.com/yyurio9826/" rel="me noopener" class="iconfont"
+      title="instagram"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M853.333333 277.333333C853.333333 289.28 843.946667 298.666667 832 298.666667L746.666667 298.666667C734.72 298.666667 725.333333 289.28 725.333333 277.333333L725.333333 192C725.333333 180.053333 734.72 170.666667 746.666667 170.666667L832 170.666667C843.946667 170.666667 853.333333 180.053333 853.333333 192M192 853.333333C180.053333 853.333333 170.666667 843.946667 170.666667 832L170.666667 469.333333 259.84 469.333333C257.28 482.986667 256 497.493333 256 512 256 653.226667 370.773333 768 512 768 653.226667 768 768 653.226667 768 512 768 497.493333 766.293333 482.986667 764.16 469.333333L853.333333 469.333333 853.333333 832C853.333333 843.946667 843.946667 853.333333 832 853.333333M512 341.333333C606.293333 341.333333 682.666667 417.706667 682.666667 512 682.666667 606.293333 606.293333 682.666667 512 682.666667 417.706667 682.666667 341.333333 606.293333 341.333333 512 341.333333 417.706667 417.706667 341.333333 512 341.333333M853.333333 85.333333 170.666667 85.333333C123.306667 85.333333 85.333333 123.306667 85.333333 170.666667L85.333333 853.333333C85.333333 900.266667 123.733333 938.666667 170.666667 938.666667L853.333333 938.666667C900.266667 938.666667 938.666667 900.266667 938.666667 853.333333L938.666667 170.666667C938.666667 123.306667 900.266667 85.333333 853.333333 85.333333Z"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://www.goodreads.com/user/show/109971038-zedyuan" rel="me noopener" class="iconfont"
+      title="goodreads"  target="_blank"
+      >
+      <svg viewBox="0 0 128 128" version="1.1"
+  width="32" height="32">
+  <path d="M 85.685714,45.48571 C 87.142857,56.14286 84.342857,68.05714 75.428571,74.25714 69.057143,78.68571 60.342857,78.28571 55.2,75.88571 44.6,70.94286 41.057143,59.14286 41.828571,48.11429 c 1.228572,-17.4 11.685715,-25.11429 21.514286,-25 13.4,-0.0571 20.514286,9.08571 22.342857,22.37142 z M 128,16 v 96 c 0,8.82857 -7.17143,16 -16,16 H 16 C 7.1714286,128 0,120.82857 0,112 V 16 C 0,7.17143 7.1714286,0 16,0 h 96 c 8.82857,0 16,7.17143 16,16 z M 94.285714,80.34286 c 0,0 -0.02857,-9.71429 -0.02857,-62.08572 H 85.97143 V 29.77143 C 85.742858,29.85713 85.628572,29.62857 85.514287,29.42857 82.771429,23.51429 75.257143,16.2 63.8,16.28571 48.971429,16.4 38.885714,25.2 35.057143,38.51429 33.828571,42.77143 33.4,47.11429 33.485714,51.54286 33.971429,73.8 46.371429,85.2 65.6,84.45714 73.857143,84.14286 81.171429,79.6 85.314286,71.54286 85.457143,71.25714 85.628571,71 85.8,70.71429 c 0.05714,0.0286 0.114286,0.0286 0.171429,0.0571 0.08571,1.08571 0.05714,8.77143 0.02857,9.85714 -0.05714,4.22857 -0.571429,8.42857 -2.057143,12.42857 -2.228571,6 -6.371428,9.91429 -12.714286,11.28572 -5.085714,1.11428 -10.171428,1.08571 -15.2,-0.34286 C 49.885714,102.25714 45.6,98.57143 44.285714,92.05714 44.2,91.6 43.914286,91.68571 43.628571,91.68571 H 35.971429 C 36.2,94.71429 36.885714,97.48571 38.4,100.02857 45.314286,111.6 62.028571,113.88571 75.028571,110.71429 89.285714,107.2 94.257143,95.02857 94.285714,80.34286 Z" />
+</svg>
+
+    </a>
+
+
+
+
+
+
+
+
+
+
+ 
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2020 -
+    2021
+    <span class="heart">
+      
+      <i class="iconfont">
+        <svg class="icon" viewBox="0 0 1025 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="14" height="14">
+  <path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7 0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1 0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2 0.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2 0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3 0.1-42.5-8-83.6-24-122.2z"
+   fill="#8a8a8a"></path>
+</svg>
+
+      </i>
+    </span><span class="author">
+        Yang Yuan
+        
+      </span></span>
+
+  
+  
+
+  
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont">
+        
+        <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="35" height="35">
+  <path d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"></path>
+</svg>
+
+      </i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+
+
+
+
+<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

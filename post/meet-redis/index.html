@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Meet Redis - Yang Yuan&#39;s Blog</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="Yang Yuan" />
+  <meta name="description" content="" />
+<meta name="keywords" content="redis, jedis" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.69.2" />
+
+
+<link rel="canonical" href="https://yngyuan.github.io/post/meet-redis/" />
+
+
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/sass/jane.min.bee9bdab7dd02331313dc4658c51f2cb3e3523c6c05a709dfbf474ab5bfad25c.css" integrity="sha256-vum9q33QIzExPcRljFHyyz41I8bAWnCd&#43;/R0q1v60lw=" media="screen" crossorigin="anonymous">
+
+
+
+
+
+<meta property="og:title" content="Meet Redis" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yngyuan.github.io/post/meet-redis/" />
+<meta property="article:published_time" content="2020-07-24T13:30:24-05:00" />
+<meta property="article:modified_time" content="2020-07-24T13:30:24-05:00" />
+<meta itemprop="name" content="Meet Redis">
+<meta itemprop="description" content="">
+<meta itemprop="datePublished" content="2020-07-24T13:30:24-05:00" />
+<meta itemprop="dateModified" content="2020-07-24T13:30:24-05:00" />
+<meta itemprop="wordCount" content="1650">
+
+
+
+<meta itemprop="keywords" content="redis," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Meet Redis"/>
+<meta name="twitter:description" content=""/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">YY</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yngyuan.github.io/">Blogs</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yngyuan.github.io/post/">Archives</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yngyuan.github.io/tags/">Tags</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yngyuan.github.io/categories/">Categories</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yngyuan.github.io/about/">About</a>
+          
+        
+      </li>
+    
+
+    
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      YY
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yngyuan.github.io/">Blogs</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yngyuan.github.io/post/">Archives</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yngyuan.github.io/tags/">Tags</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yngyuan.github.io/categories/">Categories</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yngyuan.github.io/about/">About</a>
+          
+
+        
+
+      </li>
+    
+
+    
+    
+
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">Meet Redis</h1>
+      
+      <div class="post-meta">
+        <time datetime="2020-07-24" class="post-time">
+          2020-07-24
+        </time>
+        <div class="post-category">
+            <a href="https://yngyuan.github.io/categories/distributed-system/"> distributed system </a>
+            
+          </div>
+        
+
+        
+        
+
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Table of Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#why-you-need-it">Why you need it</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#types-of-nosql-database">Types of NoSQL Database</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#jedis">Jedis</a></li>
+    <li><a href="#data-types">Data Types</a></li>
+    <li><a href="#general-commands">General Commands</a></li>
+    <li><a href="#characteristics">Characteristics</a></li>
+    <li><a href="#persistence">Persistence</a>
+      <ul>
+        <li><a href="#rdb">RDB</a></li>
+        <li><a href="#aof">AOF</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <h1 id="nosql">NoSQL</h1>
+<ul>
+<li>
+<p>NoSQL = Not only SQL</p>
+</li>
+<li>
+<p>Non-relational database</p>
+</li>
+</ul>
+<h3 id="why-you-need-it">Why you need it</h3>
+<p>In web 2.0 era where there are more contents, more Read and Write operations and more dynamic web pages.</p>
+<ul>
+<li>Hign performance</li>
+<li>Huge Storage</li>
+<li>High Scalability &amp; HIgh Availability</li>
+<li>More versitile data types</li>
+</ul>
+<h3 id="products">Products</h3>
+<p>MongoDB, Redis, Cassandra, CouchDB, riak etc.</p>
+<h3 id="types-of-nosql-database">Types of NoSQL Database</h3>
+<p>Picture</p>
+<p><img src="/image/nosql.png" alt="soa"></p>
+<h1 id="redis">Redis</h1>
+<p>Redis is an open source (BSD licensed), in-memory data structure store, used as a database, cache and message broker.</p>
+<p>It supports data structures such as strings, hashes, lists, sets, sorted sets with range queries, bitmaps, hyperloglogs, geospatial indexes with radius queries and streams.</p>
+<h2 id="jedis">Jedis</h2>
+<p>A blazingly small and sane redis java client.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="c1">// Singleton Pattern
+</span><span class="c1"></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">demo1</span><span class="o">(){</span>
+	<span class="c1">//1. set IP and Ports
+</span><span class="c1"></span>  <span class="n">Jedis</span> <span class="n">jedis</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Jedis</span><span class="o">(</span><span class="s">&#34;IP&#34;</span><span class="o">,</span> <span class="n">PORT</span><span class="o">);</span>
+  <span class="c1">//2. save data, key-value
+</span><span class="c1"></span>  <span class="n">jedis</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="s">&#34;name&#34;</span><span class="o">,</span><span class="s">&#34;yang&#34;</span><span class="o">);</span>
+  <span class="c1">//3. get data
+</span><span class="c1"></span>  <span class="n">String</span> <span class="n">val</span> <span class="o">=</span> <span class="n">jedis</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">&#34;name&#34;</span><span class="o">);</span>
+  <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">val</span><span class="o">);</span>
+  <span class="c1">//4. release resource
+</span><span class="c1"></span>  <span class="n">jedis</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Java" data-lang="Java"><span class="c1">// Connection Pool
+</span><span class="c1"></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">demo2</span><span class="o">(){</span>
+  <span class="c1">// get connection pool config object
+</span><span class="c1"></span>  <span class="n">JedisPoolConfig</span> <span class="n">config</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JedisPoolConfig</span><span class="o">();</span>
+  <span class="c1">// set max connection
+</span><span class="c1"></span>  <span class="n">config</span><span class="o">.</span><span class="na">setMaxTotal</span><span class="o">(</span><span class="n">30</span><span class="o">);</span>
+  <span class="c1">// set max Idle
+</span><span class="c1"></span>  <span class="n">config</span><span class="o">.</span><span class="na">setMaxIdle</span><span class="o">(</span><span class="n">10</span><span class="o">);</span>
+  
+  <span class="c1">// get connection pool
+</span><span class="c1"></span>  <span class="n">JedisPool</span> <span class="n">jedisPool</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JedisPool</span><span class="o">(</span><span class="n">config</span><span class="o">,</span> <span class="s">&#34;IP&#34;</span><span class="o">,</span> <span class="n">PORT</span><span class="o">);</span>
+  <span class="c1">// get core object
+</span><span class="c1"></span>  <span class="n">Jedis</span> <span class="n">jedis</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+  <span class="k">try</span><span class="o">{</span>
+    <span class="c1">// get connection from pool
+</span><span class="c1"></span>    <span class="n">jedis</span> <span class="o">=</span> <span class="n">jedisPool</span><span class="o">.</span><span class="na">getResource</span><span class="o">();</span>
+    <span class="n">jedis</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="s">&#34;name&#34;</span><span class="o">,</span> <span class="s">&#34;yang&#34;</span><span class="o">);</span>
+    <span class="n">String</span> <span class="n">val</span> <span class="o">=</span> <span class="n">jedis</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">&#34;name&#34;</span><span class="o">);</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">val</span><span class="o">);</span>
+  <span class="o">}</span> <span class="k">catch</span><span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">){</span>
+    <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+  <span class="o">}</span> <span class="k">finally</span><span class="o">{</span>
+    <span class="k">if</span><span class="o">(</span><span class="n">jedis</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">){</span>
+      <span class="n">jedis</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+    <span class="o">}</span>
+    <span class="k">if</span><span class="o">(</span><span class="n">jedisPool</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">){</span>
+      <span class="n">jedisPool</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+  
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="data-types">Data Types</h2>
+<ul>
+<li>
+<p>String</p>
+<ul>
+<li>
+<p>you get what you saved</p>
+</li>
+<li>
+<p>max value 521M</p>
+</li>
+<li>
+<p>get, set, getset, del</p>
+</li>
+</ul>
+</li>
+<li>
+<p>hash</p>
+<ul>
+<li>a map of String Key, String Value.</li>
+<li>hset map username jack</li>
+<li>hget username</li>
+<li>hmset map2 username rose age 21</li>
+<li>hgetall</li>
+<li>hdel</li>
+<li>hlen</li>
+<li>hkeys</li>
+<li>hvals</li>
+<li>hexists</li>
+</ul>
+</li>
+<li>
+<p>list</p>
+<ul>
+<li>Double-linked list.</li>
+<li>ArrayList</li>
+<li>lpush mylist a b c</li>
+<li>rpush mylist 123</li>
+<li>lrange mylist 0 5</li>
+<li>lpop/rpop mylist</li>
+<li>llen</li>
+<li>rpoplpush mylist1 mylist2</li>
+</ul>
+<p><img src="/image/poppush.png" alt="soa"></p>
+</li>
+<li>
+<p>set</p>
+<ul>
+<li>as the name suggests, no duplicate</li>
+<li>sadd myset a b c</li>
+<li>srem a</li>
+<li>smembers myset</li>
+<li>sismember myset a</li>
+<li>sdiff myset1 myset2/ sdiffstore</li>
+<li>sinter myset1 myset2</li>
+<li>sunion myset1 myset2</li>
+</ul>
+</li>
+<li>
+<p>Sorted Set</p>
+<ul>
+<li>have a score for sorting</li>
+<li>because they are sorted, it is easy to find one in the middle</li>
+<li>used for things like twittor trending.</li>
+<li>zadd sortedlist 70 zs 80 ls 90 ww</li>
+<li>zscore sortedlist zs</li>
+<li>zcard sortedlist</li>
+<li>zrem sortedlist ww</li>
+<li>zrange sortedlist 0 -1 (withscores)</li>
+<li>zreverange sortedlist 0 -1</li>
+<li>zremrangebyrank sortedlist 0 4</li>
+<li>zrangebyscore sortedlist 0 100 withscores limit 0 2</li>
+<li>zcount sortedlist 80 90</li>
+</ul>
+</li>
+</ul>
+<h2 id="general-commands">General Commands</h2>
+<ul>
+<li>keys my?
+<ul>
+<li>my2</li>
+<li>my1</li>
+<li>my3</li>
+</ul>
+</li>
+<li>del my1</li>
+<li>exists my2</li>
+<li>get</li>
+<li>rename key1 key2</li>
+<li>expire key1 1000  // setting expire time</li>
+<li>ttl key1 // time to live</li>
+<li>type key1</li>
+</ul>
+<h2 id="characteristics">Characteristics</h2>
+<p><strong>There could be up to 16 db in a Redis instance.</strong></p>
+<ul>
+<li>select 1</li>
+<li>keys *</li>
+</ul>
+<p><strong>Redis transaction</strong></p>
+<p>Redis transactions can execute multiple commands at once, with the following three important guarantees:</p>
+<ul>
+<li>
+<p>The batch operation is put into the stack buffer before sending the EXEC command.</p>
+</li>
+<li>
+<p>After receiving the EXEC command, it enters the transaction execution. Any command in the transaction fails to execute, and the remaining commands are still executed.</p>
+</li>
+<li>
+<p>During the transaction execution process, command requests submitted by other clients will not be inserted into the transaction execution command sequence.</p>
+</li>
+</ul>
+<p>A transaction will go through the following three stages from inception to execution:</p>
+<ul>
+<li>Start the Transaction.</li>
+<li>Join the Queue.</li>
+<li>Execute.</li>
+</ul>
+<p><em>It&rsquo;s important to note that even when a command fails, all the other commands in the queue are processed – Redis will not stop the processing of commands.</em></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">redis 127.0.0.1:6379&gt; MULTI // start a transaction block
+OK
+
+redis 127.0.0.1:6379&gt; SET book-name &#34;Mastering C++ in 21 days&#34;
+QUEUED
+
+redis 127.0.0.1:6379&gt; GET book-name
+QUEUED
+
+redis 127.0.0.1:6379&gt; SADD tag &#34;C++&#34; &#34;Programming&#34; &#34;Mastering Series&#34;
+QUEUED
+
+redis 127.0.0.1:6379&gt; SMEMBERS tag
+QUEUED
+
+redis 127.0.0.1:6379&gt; EXEC
+1) OK
+2) &#34;Mastering C++ in 21 days&#34;
+3) (integer) 3
+4) 1) &#34;Mastering Series&#34;
+   2) &#34;C++&#34;
+   3) &#34;Programming&#34;
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="persistence">Persistence</h2>
+<p>Redis provides a different range of persistence options:</p>
+<ul>
+<li>The RDB persistence performs point-in-time snapshots of your dataset at specified intervals.</li>
+<li>The AOF persistence logs <strong>every</strong> write operation received by the server, that will be played again at server startup, reconstructing the original dataset. Commands are logged using the same format as the Redis protocol itself, in an append-only fashion. Redis is able to rewrite the log in the background when it gets too big.</li>
+<li>If you wish, you can disable persistence completely, if you want your data to just exist as long as the server is running.</li>
+<li>It is possible to combine both AOF and RDB in the same instance. Notice that, in this case, when Redis restarts the AOF file will be used to reconstruct the original dataset since it is guaranteed to be the most complete.</li>
+</ul>
+<h3 id="rdb">RDB</h3>
+<h4 id="rdb-advantages">RDB advantages</h4>
+<ul>
+<li>RDB is a very compact <strong>single-file</strong> point-in-time representation of your Redis data. RDB files are perfect for <strong>backups</strong>. For instance you may want to archive your RDB files every hour for the latest 24 hours, and to save an RDB snapshot every day for 30 days. This allows you to easily restore different versions of the data set in case of disasters.</li>
+<li>RDB is very good for <strong>disaster recovery</strong>, being a single compact file that can be transferred to far data centers, or onto Amazon S3 (possibly encrypted).</li>
+<li>RDB maximizes Redis <strong>performances</strong> since the only work the Redis parent process needs to do in order to persist is forking a child that will do all the rest. The parent instance will never perform disk I/O or alike.</li>
+<li>RDB allows faster restarts with big datasets compared to AOF.</li>
+</ul>
+<h4 id="rdb-disadvantages">RDB disadvantages</h4>
+<ul>
+<li>RDB is NOT good if you need to minimize the chance of data loss in case Redis stops working (for example after a power outage). You can configure different <em>save points</em> where an RDB is produced (for instance after at least five minutes and 100 writes against the data set, but you can have multiple save points). However you&rsquo;ll usually create an RDB snapshot every five minutes or more, so in case of Redis stopping working without a correct shutdown for any reason you should be prepared to lose the latest minutes of data.</li>
+<li>RDB needs to fork() often in order to persist on disk using a child process. Fork() can be time consuming if the dataset is big, and may result in Redis to stop serving clients for some millisecond or even for one second if the dataset is very big and the CPU performance not great. AOF also needs to fork() but you can tune how often you want to rewrite your logs without any trade-off on durability.</li>
+</ul>
+<h3 id="aof">AOF</h3>
+<h4 id="aof-advantages">AOF advantages</h4>
+<ul>
+<li>Using AOF Redis is much more durable: you can have different fsync policies: no fsync at all, fsync every second, fsync at every query. With the default policy of fsync every second write performances are still great (fsync is performed using a background thread and the main thread will try hard to perform writes when no fsync is in progress.) but you can only lose one second worth of writes.</li>
+<li>The AOF log is an append only log, so there are no seeks, nor corruption problems if there is a power outage. Even if the log ends with an half-written command for some reason (disk full or other reasons) the redis-check-aof tool is able to fix it easily.</li>
+<li>Redis is able to automatically rewrite the AOF in background when it gets too big. The rewrite is completely safe as while Redis continues appending to the old file, a completely new one is produced with the minimal set of operations needed to create the current data set, and once this second file is ready Redis switches the two and starts appending to the new one.</li>
+<li>AOF contains a log of all the operations one after the other in an easy to understand and parse format. You can even easily export an AOF file. For instance even if you flushed everything for an error using a <a href="https://redis.io/commands/flushall">FLUSHALL</a> command, if no rewrite of the log was performed in the meantime you can still save your data set just stopping the server, removing the latest command, and restarting Redis again.</li>
+</ul>
+<h4 id="aof-disadvantages">AOF disadvantages</h4>
+<ul>
+<li>AOF files are usually bigger than the equivalent RDB files for the same dataset.</li>
+<li>AOF can be slower than RDB depending on the exact fsync policy. In general with fsync set to <em>every second</em> performance is still very high, and with fsync disabled it should be exactly as fast as RDB even under high load. Still RDB is able to provide more guarantees about the maximum latency even in the case of an huge write load.</li>
+<li>In the past we experienced rare bugs in specific commands (for instance there was one involving blocking commands like <a href="https://redis.io/commands/brpoplpush">BRPOPLPUSH</a>) causing the AOF produced to not reproduce exactly the same dataset on reloading. These bugs are rare and we have tests in the test suite creating random complex datasets automatically and reloading them to check everything is fine. However, these kind of bugs are almost impossible with RDB persistence. To make this point more clear: the Redis AOF works by incrementally updating an existing state, like MySQL or MongoDB does, while the RDB snapshotting creates everything from scratch again and again, that is conceptually more robust. However - 1) It should be noted that every time the AOF is rewritten by Redis it is recreated from scratch starting from the actual data contained in the data set, making resistance to bugs stronger compared to an always appending AOF file (or one rewritten reading the old AOF instead of reading the data in memory). 2) We have never had a single report from users about an AOF corruption that was detected in the real world.</li>
+</ul>
+    </div>
+
+    
+    
+
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="https://yngyuan.github.io/tags/redis/">redis</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/20-years-of-product-management/">
+            
+            <i class="iconfont">
+              <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
+</svg>
+
+            </i>
+            <span class="prev-text nav-default">20 Years of Product Management</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/house-robbers/">
+            <span class="next-text nav-default">House Robbers</span>
+            <span class="prev-text nav-mobile">Next</span>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+            </i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+  
+  
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="icon-links">
+  
+  
+    <a href="mailto:zedd.yuan@utexas.edu" rel="me noopener" class="iconfont"
+      title="email" >
+      <svg class="icon" viewBox="0 0 1451 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M664.781909 681.472759 0 97.881301C0 3.997201 71.046997 0 71.046997 0L474.477909 0 961.649408 0 1361.641813 0C1361.641813 0 1432.688811 3.997201 1432.688811 97.881301L771.345323 681.472759C771.345323 681.472759 764.482731 685.154773 753.594283 688.65053L753.594283 688.664858C741.602731 693.493018 729.424896 695.068979 718.077952 694.839748 706.731093 695.068979 694.553173 693.493018 682.561621 688.664858L682.561621 688.65053C671.644501 685.140446 664.781909 681.472759 664.781909 681.472759L664.781909 681.472759ZM718.063616 811.603883C693.779541 811.016482 658.879232 802.205449 619.10784 767.734955 542.989056 701.759633 0 212.052267 0 212.052267L0 942.809523C0 942.809523 0 1024 83.726336 1024L682.532949 1024 753.579947 1024 1348.948139 1024C1432.688811 1024 1432.688811 942.809523 1432.688811 942.809523L1432.688811 212.052267C1432.688811 212.052267 893.138176 701.759633 817.019477 767.734955 777.248 802.205449 742.347691 811.03081 718.063616 811.603883L718.063616 811.603883Z"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://www.linkedin.com/in/theyuan/" rel="me noopener" class="iconfont"
+      title="linkedin"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="33" height="33">
+  <path d="M872.405333 872.618667h-151.637333v-237.610667c0-56.661333-1.152-129.578667-79.018667-129.578667-79.061333 0-91.136 61.653333-91.136 125.397334v241.792H398.976V384h145.664v66.602667h1.962667c20.352-38.4 69.845333-78.933333 143.786666-78.933334 153.642667 0 182.058667 101.12 182.058667 232.746667v268.202667zM227.712 317.141333a87.978667 87.978667 0 0 1-88.021333-88.106666 88.064 88.064 0 1 1 88.021333 88.106666z m76.032 555.477334H151.68V384h152.064v488.618667zM948.266667 0H75.562667C33.792 0 0 33.024 0 73.770667v876.458666C0 991.018667 33.792 1024 75.562667 1024h872.576C989.866667 1024 1024 991.018667 1024 950.229333V73.770667C1024 33.024 989.866667 0 948.138667 0h0.128z"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://github.com/yngyuan" rel="me noopener" class="iconfont"
+      title="github"  target="_blank"
+      >
+      <svg class="icon" style="" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M512 12.672c-282.88 0-512 229.248-512 512 0 226.261333 146.688 418.133333 350.08 485.76 25.6 4.821333 34.986667-11.008 34.986667-24.618667 0-12.16-0.426667-44.373333-0.64-87.04-142.421333 30.890667-172.458667-68.693333-172.458667-68.693333C188.672 770.986667 155.008 755.2 155.008 755.2c-46.378667-31.744 3.584-31.104 3.584-31.104 51.413333 3.584 78.421333 52.736 78.421333 52.736 45.653333 78.293333 119.850667 55.68 149.12 42.581333 4.608-33.109333 17.792-55.68 32.426667-68.48-113.706667-12.8-233.216-56.832-233.216-253.013333 0-55.893333 19.84-101.546667 52.693333-137.386667-5.76-12.928-23.04-64.981333 4.48-135.509333 0 0 42.88-13.738667 140.8 52.48 40.96-11.392 84.48-17.024 128-17.28 43.52 0.256 87.04 5.888 128 17.28 97.28-66.218667 140.16-52.48 140.16-52.48 27.52 70.528 10.24 122.581333 5.12 135.509333 32.64 35.84 52.48 81.493333 52.48 137.386667 0 196.693333-119.68 240-233.6 252.586667 17.92 15.36 34.56 46.762667 34.56 94.72 0 68.522667-0.64 123.562667-0.64 140.202666 0 13.44 8.96 29.44 35.2 24.32C877.44 942.592 1024 750.592 1024 524.672c0-282.752-229.248-512-512-512"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://www.instagram.com/yyurio9826/" rel="me noopener" class="iconfont"
+      title="instagram"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M853.333333 277.333333C853.333333 289.28 843.946667 298.666667 832 298.666667L746.666667 298.666667C734.72 298.666667 725.333333 289.28 725.333333 277.333333L725.333333 192C725.333333 180.053333 734.72 170.666667 746.666667 170.666667L832 170.666667C843.946667 170.666667 853.333333 180.053333 853.333333 192M192 853.333333C180.053333 853.333333 170.666667 843.946667 170.666667 832L170.666667 469.333333 259.84 469.333333C257.28 482.986667 256 497.493333 256 512 256 653.226667 370.773333 768 512 768 653.226667 768 768 653.226667 768 512 768 497.493333 766.293333 482.986667 764.16 469.333333L853.333333 469.333333 853.333333 832C853.333333 843.946667 843.946667 853.333333 832 853.333333M512 341.333333C606.293333 341.333333 682.666667 417.706667 682.666667 512 682.666667 606.293333 606.293333 682.666667 512 682.666667 417.706667 682.666667 341.333333 606.293333 341.333333 512 341.333333 417.706667 417.706667 341.333333 512 341.333333M853.333333 85.333333 170.666667 85.333333C123.306667 85.333333 85.333333 123.306667 85.333333 170.666667L85.333333 853.333333C85.333333 900.266667 123.733333 938.666667 170.666667 938.666667L853.333333 938.666667C900.266667 938.666667 938.666667 900.266667 938.666667 853.333333L938.666667 170.666667C938.666667 123.306667 900.266667 85.333333 853.333333 85.333333Z"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://www.goodreads.com/user/show/109971038-zedyuan" rel="me noopener" class="iconfont"
+      title="goodreads"  target="_blank"
+      >
+      <svg viewBox="0 0 128 128" version="1.1"
+  width="32" height="32">
+  <path d="M 85.685714,45.48571 C 87.142857,56.14286 84.342857,68.05714 75.428571,74.25714 69.057143,78.68571 60.342857,78.28571 55.2,75.88571 44.6,70.94286 41.057143,59.14286 41.828571,48.11429 c 1.228572,-17.4 11.685715,-25.11429 21.514286,-25 13.4,-0.0571 20.514286,9.08571 22.342857,22.37142 z M 128,16 v 96 c 0,8.82857 -7.17143,16 -16,16 H 16 C 7.1714286,128 0,120.82857 0,112 V 16 C 0,7.17143 7.1714286,0 16,0 h 96 c 8.82857,0 16,7.17143 16,16 z M 94.285714,80.34286 c 0,0 -0.02857,-9.71429 -0.02857,-62.08572 H 85.97143 V 29.77143 C 85.742858,29.85713 85.628572,29.62857 85.514287,29.42857 82.771429,23.51429 75.257143,16.2 63.8,16.28571 48.971429,16.4 38.885714,25.2 35.057143,38.51429 33.828571,42.77143 33.4,47.11429 33.485714,51.54286 33.971429,73.8 46.371429,85.2 65.6,84.45714 73.857143,84.14286 81.171429,79.6 85.314286,71.54286 85.457143,71.25714 85.628571,71 85.8,70.71429 c 0.05714,0.0286 0.114286,0.0286 0.171429,0.0571 0.08571,1.08571 0.05714,8.77143 0.02857,9.85714 -0.05714,4.22857 -0.571429,8.42857 -2.057143,12.42857 -2.228571,6 -6.371428,9.91429 -12.714286,11.28572 -5.085714,1.11428 -10.171428,1.08571 -15.2,-0.34286 C 49.885714,102.25714 45.6,98.57143 44.285714,92.05714 44.2,91.6 43.914286,91.68571 43.628571,91.68571 H 35.971429 C 36.2,94.71429 36.885714,97.48571 38.4,100.02857 45.314286,111.6 62.028571,113.88571 75.028571,110.71429 89.285714,107.2 94.257143,95.02857 94.285714,80.34286 Z" />
+</svg>
+
+    </a>
+
+
+
+
+
+
+
+
+
+
+ 
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2020 -
+    2021
+    <span class="heart">
+      
+      <i class="iconfont">
+        <svg class="icon" viewBox="0 0 1025 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="14" height="14">
+  <path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7 0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1 0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2 0.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2 0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3 0.1-42.5-8-83.6-24-122.2z"
+   fill="#8a8a8a"></path>
+</svg>
+
+      </i>
+    </span><span class="author">
+        Yang Yuan
+        
+      </span></span>
+
+  
+  
+
+  
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont">
+        
+        <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="35" height="35">
+  <path d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"></path>
+</svg>
+
+      </i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+
+
+
+
+<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
